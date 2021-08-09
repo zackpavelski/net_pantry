@@ -47,3 +47,6 @@ exports.forgotPass = function(req, res, next){
 exports.thank = function(req, res, next){
     res.render('thankYou.html', {message:""});
 }
+exports.feedbackResponse = function(req, res, next){
+    res.render('feedbackResponse.html', {message:""});
+}
