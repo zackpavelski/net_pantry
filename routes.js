@@ -374,6 +374,25 @@ exports.setRequestUrl=function(app){
         
     
     });
+    app.post('/getMaxID', function(req, response){
+        var connection = mysql.createConnection({
+            host: 'pantrydb.cvskfciqfnj6.us-east-1.rds.amazonaws.com',
+            port: '3306',
+            user: 'pantryAdmin',
+            password: 'Pantry21!',
+            database: 'pantrydb'
+        });
+        connection.connect(function(err){
+            if(err){
+                console.error('Db connection failed: ' + err.stack);
+                return;
+            }
+        });
+        connection.query(`SELECT MAX(ID) FROM ${req.body.schoolName} LIMIT 1`, function(req, response){
+            if(err) throw err;
+            response.send({success: true, message: response.id});
+        });
+    });
     app.post('/loadzip', function(req, response){
         var connection = mysql.createConnection({
             host: 'pantrydb.cvskfciqfnj6.us-east-1.rds.amazonaws.com',

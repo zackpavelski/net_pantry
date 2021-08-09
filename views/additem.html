@@ -60,7 +60,9 @@
                     data entered later -->
                     <div id=printableArea><img src=
                         "https://chart.googleapis.com/chart?cht=qr&chl=NULL&chs=160x160&chld=L|0"
-                                class="qr-code img-thumbnail img-responsive" style="margin-left: auto; margin-right: auto; display: block;" ></div>
+                                class="qr-code img-thumbnail img-responsive" style="margin-left: auto; margin-right: auto; display: block;" >
+                                <p style="margin-left:auto;margin-right:auto;" id="itemID"></p>
+                            </div>
                     
                     </div>
                 
@@ -77,6 +79,12 @@
                         <input type="text" size="60"
                             maxlength="60" class="form-control"
                             id="content" placeholder="Enter Item" style="width: 100%; border-radius: 10px; background-color: white;" />
+                            <select id="school2" name="school">
+                                <option value="0">Select School:</option>
+                                <option value="lhsInventory">Lakewood</option>
+                                <option value="gibsInventory">Gibbs</option>
+                                <option value="hollinsInventory">Hollins</option>
+                              </select>
                         </div>
                         <div class="col-sm-offset-2 col-sm-10" style="padding-top: 15px;">
                 
@@ -191,6 +199,23 @@
                             if(!(data.message.includes('admin'))){
                                 window.location.href='/studentDash';                            }
                              return;
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+            };
+            function getMaxID(){
+                $.ajax({
+                       url: '/getMaxID',
+                       method:'POST',
+                       data: {
+                 schoolName: document.getElementById('school2').innerHTML
+               }
+                     }).done(function(data){
+                         if(data.success){
+                            document.getElementById('itemID').innerHTML = data.message;
                          }
                      }).fail(function(){
                         //do nothing ....
