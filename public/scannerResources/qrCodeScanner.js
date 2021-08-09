@@ -93,7 +93,11 @@ qrcode.callback = res => {
   }
 };
 
-
+function decodeUploaded(event){
+  var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+  qrcode.decode(image.src);
+}
 function tick() {
   canvasElement.height = video.videoHeight;
   canvasElement.width = video.videoWidth;
