@@ -61,7 +61,7 @@
                     <div id=printableArea><img src=
                         "https://chart.googleapis.com/chart?cht=qr&chl=NULL&chs=160x160&chld=L|0"
                                 class="qr-code img-thumbnail img-responsive" style="margin-left: auto; margin-right: auto; display: block;" >
-                                <p style="margin-left:auto;margin-right:auto;" id="itemID"></p>
+                                <p style="position:relative;left: 48%" id="itemID"></p>
                             </div>
                     
                     </div>
@@ -91,7 +91,7 @@
                         <!-- Button to generate QR Code for
                         the entered data -->
                         <button type="button" class="btn btn-default" id="generate">Generate</button>
-                        <input type="button" id="print" onclick="printDiv('printableArea')" value="Print">
+                        <input type="button" id="print" onclick=" printDiv('printableArea')" value="Print">
                         <br>
                         <br>
 
@@ -169,6 +169,8 @@
                         // Replace the src of the image with
                         // the QR code image
                         $('.qr-code').attr('src', finalURL);
+                        getMaxID();
+
                     });
                     });
                 </script>
@@ -211,7 +213,8 @@
                        url: '/getMaxID',
                        method:'POST',
                        data: {
-                 schoolName: document.getElementById('school2').innerHTML
+                 schoolName: document.getElementById('school2').value,
+                 itemName: document.getElementById('content').value
                }
                      }).done(function(data){
                          if(data.success){

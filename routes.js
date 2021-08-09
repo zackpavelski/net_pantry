@@ -388,9 +388,12 @@ exports.setRequestUrl=function(app){
                 return;
             }
         });
-        connection.query(`SELECT MAX(ID) FROM ${req.body.schoolName} LIMIT 1`, function(req, response){
+        console.log(req.body.schoolName);
+        console.log(req.body.itemName);
+        connection.query(`SELECT * FROM ${req.body.schoolName} WHERE item_name = '${req.body.itemName}' LIMIT 1`, function(err, result){
+            console.log(result[0]);
             if(err) throw err;
-            response.send({success: true, message: response.id});
+            response.send({success: true, message: String(result[0].id) + ' : ' + result[0].item_name});
         });
     });
     app.post('/loadzip', function(req, response){

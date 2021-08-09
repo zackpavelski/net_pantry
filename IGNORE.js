@@ -35,32 +35,9 @@ connection.connect(function(err){
     var sql = "CREATE TABLE orders (id INT, name VARCHAR(255), items VARCHAR(255))";
     var add = "CREATE TABLE orders (id int(11) NOT NULL AUTO_INCREMENT, name VARCHAR(100), items VARCHAR(255), date VARCHAR(255), PRIMARY KEY(id))"
 
-    connection.query("SELECT * FROM pantryUsers", function(err, result){
-        var zip = [];
-        var zipNums = [];
-        var strFinal = '';
-        var avgInt = 0;
+    connection.query("SELECT id FROM lhsInventory WHERE item_name = 'Pasta' LIMIT 1", function(err, result){
         if(err) throw err;
-        for(var i = 0; i <= result.length - 1; i++){
-            res = result[i];
-            if(zip.includes(res.zipCode)){
-                zipNums[zip.indexOf(res.zipCode)] += 1;
-            }else{
-                zip.push(res.zipCode);
-                zipNums.push(1);
-            }
-        }
-        strFinal+= 'var chart = new CanvasJS.Chart("chartContainer", {	animationEnabled: true, title: {text: "Popular Zip Codes" }, data: [{ type: "pie", startAngle: 240, yValueFormatString: "##0.00\"%\"", indexLabel: "{label} {y}", dataPoints: [';
-        //{y: 79.45, label: "Google"},
-        for(var num in zipNums) avgInt+= num;
-        for(var elem in zip){
-
-                strFinal += `y: ${zipNums[zip.indexOf(elem)]/avgInt}, label: "${elem}"},`;
-            
-        }
-        strFinal.replace(/_([^,]*)$/, '' + '$1');
-        strFinal+=']}]}); chart.render();';
-        //response.send({success: true, message: strFinal});
+        console.log(result[0].id)
     });
 
     /*connection.query("CREATE TABLE feedback (id int(11) NOT NULL AUTO_INCREMENT, paragraph VARCHAR(1000), date VARCHAR(50), PRIMARY KEY(id))", function(err, result){
