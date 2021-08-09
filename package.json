@@ -24,6 +24,7 @@
     "node-localstorage": "^2.2.1",
     "nodemon": "^2.0.12",
     "npx": "^10.2.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "toidentifier": "^1.0.0"
   }
 }
