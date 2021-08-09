@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+    <title>Feeding the Future | Inventory</title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- vendor css-->
+    <link href="css/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Custom Stylesheet   -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+</head>
+
+<div class="page-container">
+<body class="body">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" href="..\dashboardv2\index.html"><img src="..\inventory\resources\logo_Stroke.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="..\dashboardv2\index.html">My Dashboard</a>
+                <a class="nav-item nav-link" href="..\scanner\Scanner_phone.html">Scanner</a>
+                <a class="nav-item nav-link" href="..\inventory\inventory.html">Inventory</a>
+                <a class="nav-item nav-link" href="..\dashboardv2\addItem.html">Add Item</a>
+                <a class="nav-item nav-link" href="..\profileSettings\index.html">Account</a>
+                <a class="nav-item nav-link" href="..\login_signup\login.html">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends -->
+    
+<div class="section__content section__content--p30">
+    <div class="container" style="margin-left:-.7%">
+        <h2>Search Students<h4>&nbsp/&nbspLakewood(school)</h4></h2>
+        <form id="form" role="search">
+            <text>Enter:</text> <input type="search" id="firstName" name="q" placeholder="First Name" aria-label="Search through site content">
+            <input type="form" id="lastName" name="q" placeholder="Last Name" aria-label="Search through site content">
+            <text>School: </text> 
+            <select name="school" id="schools">
+                <option value="lakewood">Lakewood HS</option>
+                <option value="hollins">Hollins HS</option>
+                <option value="gibbs">Gibbs HS</option>
+            </select>
+            <button id="submit" onclick="pull()">Search</button>
+        </form>
+
+        <br>
+
+        <h2>Items Checked Out by (name)</h2>
+        <table class="table_background" id="checkOutTable" >
+            <tr>
+                <th>Name</th>
+                <th>Item</th>
+                <th>Macro</th>
+                <th>Qty</th>
+            </tr>
+            <tr>
+                <td>&nbspJohn Smith</td>
+                <td>&nbspMacaroni</td>
+                <td>&nbspPasta</td>
+                <td>&nbsp99</td>
+            </tr>
+            <tr>
+                <td>&nbspCasey Miltner</td>
+                <td>&nbspCanned Corn</td>
+                <td>&nbspVegetables</td>
+                <td>&nbsp2</td>
+            </tr>
+        </table>
+
+        <h2>Inventory</h2>
+        <table class="table_background" id="inventoryTable" >
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Qty</th>
+            </tr>
+            <tr>
+                <td>60bf79cd514cc0c8a230ff7b</td>
+                <td>Kraft Mac n Cheese</td>
+                <td>Packaged Entree</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>478234723647635fjsfhdssd</td>
+                <td>Macaroni</td>
+                <td>Pasta</td>
+                <td>99</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- end of javascript files -->
+
+</body>
+</div>
+</div>
+</html>

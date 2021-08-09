@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Feeding the Future | Account Settings</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="/profileResources/libs/bootstrap/css/bootstrap.min.css"> <!--edits banner(avatar, student's info, change password')-->
+	<link rel="stylesheet" href="/profileResources/css/styles.css">
+	<link rel="stylesheet" href="/profileResources/css/fonts.css">
+
+</head>
+<body onload="changeDom3()">
+		
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" action="dashboard" onclick="window.location.href='/dashboard'"><img src="/images/food4allkidslogoSmall.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
+                <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
+                <a class="nav-item nav-link" id="inventoryTab" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
+                <a class="nav-item nav-link" id="addItemTab" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
+                <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
+				<a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
+                <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+	<main>
+		<h1 class="mt-4 mb-4">Account Settings</h1>
+		<div class="alert alert-primary row no-gutters" style="width: 120%;">
+			<div class="col-md-2 mr-4">
+			</div>
+			<div class="col-md ml-2 mr-4">
+			</div>
+		
+		</div>
+		<div class="row no-gutters mt-4">
+			<div class="col-md-2 mr-4">
+				
+			
+			</div>
+			<div class="col-md ml-2 mr-4 mt-1">
+				<form action="/updateUser" method="post" name="info_form">
+					<input type="text" class="form-control mb-3" id="validationServer01" placeholder="First name" id="firstName" name="firstName" required>
+					<input type="text" class="form-control mb-3" id="validationServer01" placeholder="Last name" id="lastName" name="lastName" required>
+					<input type="text" class="form-control mb-3" id="validationServer01" placeholder="Username"id="username" name="username" required>
+					<input type="password" class="form-control mb-3" id="validationServer01" placeholder="Old password" name="old_password" required>
+					<input type="password" class="form-control mb-3" id="validationServer01" placeholder="New password" id="new_password" name="new_password" required>
+					<input type="password" class="form-control mb-3" id="validationServer01" placeholder="Repeat password" name="repeat_password" required>
+					<button class="btn btn-secondary w-100" id = "submit" type="submit">Save changes</button>
+				</form>
+			</div>
+			
+		</div>
+	</main>
+</body>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	function changeDom3(){
+             //ajax call
+              $.ajax({
+                       url: '/getUser',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+							if(!(data.message.includes('admin'))){
+								document.getElementById('inventoryTab').remove();
+								document.getElementById('addItemTab').remove();
+                             return;}
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+
+                   
+            
+</script>
+</html>

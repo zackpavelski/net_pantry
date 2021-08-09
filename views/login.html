@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+<html>
+<head>
+  <title>Feeding the Future | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/loginResources/login_style.css">
+  <script type="text/javascript" src="../login_signup/login.js"></script>
+
+</head>
+
+<body class="body">
+	
+	<!--<a href="https://github.com/Mehedi61/Login-form-Sign-up-form">  link to github--> 
+
+<div class="login-page">
+  <div class="form">
+    <form>
+      <img src="..\login_signup\resources\logo2.png" alt="logo">
+      <input id="email" type="text" placeholder="&#xf007;  email"/>
+      <input id="password" type="text" placeholder="&#xf007;  password"/>
+      <br>
+      <br>
+      <button type="button" action="/auth" onclick="window.location.href='/auth'">CHECK-IN</button>
+      <p class="message"></p>
+    </form>
+
+    <form class="login-form">
+      <button type="button" action="signup" onclick="window.location.href='/signup'">SIGN UP</button>
+    </form>
+
+    <!-- put forgot password here-->
+    <a href="/forgotPass">Forgot Password?</a>
+
+
+
+  </div>
+</div>
+  
+  <script src="../login_signup/login.js"></script>
+  <script>
+    function show(){
+      var password = document.getElementById("password");
+      var icon = document.querySelector(".fas")
+
+      // ========== Checking type of password ===========
+      if(password.type === "password"){
+        password.type = "text";
+      }
+      else {
+        password.type = "password";
+      }
+    };
+  </script>
+</body>
+</html>
+

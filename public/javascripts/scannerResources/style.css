@@ -1,0 +1,310 @@
+/*font-family: 'Noto Sans', "Helvetica";
+blue1: #0B2972;
+blue2: #03296D;
+white: #FFFFFF;
+yellow: #F9C506;*/
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #e5e5e5;
+  text-align:center!important;
+  
+}
+
+#vid_container {
+  position: relative; /*was absolute, but broke navbar.*/
+  top: 0;
+  left: 0;
+ 
+}
+a {
+  text-align:center;
+}
+h1 {
+  text-align: center; 
+  font-size: 40px; 
+  margin-top: 25px;
+}
+header
+{
+  background-color: #e5e5e5;
+  margin-top: 50px;
+}
+
+.page-container {
+    background: #e5e5e5;
+}
+
+#container {
+  animation:transitionIn .75s;
+
+}
+@keyframes transitionIn { /* page transition*/
+  from {
+    opacity:0;
+    transform:rotateX(-10deg);
+  }
+  to {
+    opacity:1;
+    transform:rotateX(0);
+  }
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#gui_controls {
+  position: fixed;
+  background-color: rgb(255, 255, 255); /*rgba(255, 0, 0, 0.5);*/
+  z-index: 2;
+  bottom: 0;
+}
+
+#video_overlay {
+  position: fixed;
+  display: none;
+  width: 10%;
+  height: 10%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 10;
+  background-color: #111;
+}
+
+#qr-canvas {
+  margin: auto;
+  margin-left: calc(0% - 70px);
+  max-width: 119vw; 
+  max-height: 80vh;
+  width: auto; 
+  height: auto; 
+  z-index: -100;
+  background-size: cover;
+  
+}
+tbody{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center!important;
+}
+tr{
+  font-size:16px;
+}
+button {
+  outline: none;
+  color: white;
+  display: block;
+  opacity: 1;
+  background: transparent;
+  border: solid 2px #fff;
+  margin: 10px;
+  text-shadow: 0px 0px 4px black;
+  background-position: center center;
+  background-repeat: no-repeat;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+#takePhotoButton {
+  left: calc(50% - 40px);
+  top: calc(50% - 40px);
+  width: 80px; 
+  height: 80px;
+  background-image: url('img/ic_photo_camera_white_48px.svg');
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#takePhotoButton:active {
+  background-color: #fff;
+}
+
+#toggleFullScreenButton {
+  display: none;
+  width: 64px;
+  height: 64px;
+  background-image: url('img/ic_fullscreen_white_48px.svg');
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#toggleFullScreenButton[aria-pressed='true'] {
+  background-image: url('img/ic_fullscreen_exit_white_48px.svg');
+}
+
+
+@media screen and (orientation: portrait) {
+ 
+  /* portrait-specific styles */
+
+  /* video_container (video) doesn't respect height... 
+       so we will fill it in completely in portrait mode
+    */
+  #vid_container {
+    width: 119vw;
+    height: 80%;
+  }
+
+  #gui_controls {
+    width: 100w;
+    height: 40%;
+    left: 0;
+  }
+
+}
+
+@media screen and (orientation: landscape) {
+  #vid_container {
+    width: 105%;
+    height: 100%;
+    background-color: #e5e5e5;
+  }
+
+  #vid_container.left {
+    left: 20%;
+  }
+
+  /* we default to right */
+  #gui_controls {
+    width: 100%;
+    height: 40%;
+    right: 0;
+  }
+
+  /* for the lefties */
+  #gui_controls.left {
+    left: 0;
+  }
+
+
+  #toggleFullScreenButton {
+    left: calc(50% - 32px);
+    top: calc(82% - 32px);
+  }
+}
+
+#orderFin{
+  width: 200px;
+  background-color: #F9C506;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  /*box-shadow: 0 5px 10px 0 #F9C506;*/ /*Use to add a box shadow*/
+  position: relative;
+}
+/*
+td {
+  text-align:left;
+}
+th{
+  text-align: center;
+}
+table
+{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  /*margin-top: 15vh;
+  overflow: scroll;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+*/
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 32%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+  width: 12%;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+  width: 12%;
+}
+
+text{
+  font-size:50px;
+  Font-weight: bold;
+  width: 32%;
+}
+
+/*qty number*/
+/* -- qty increment counter -- */
+
+.quantity {
+  display: inline-block; }
+ 
+ .quantity .input-text.qty {
+  width: 35px;
+  height: 39px;
+  padding: 0 5px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #efefef;
+ }
+ 
+ .quantity.buttons_added {
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: top; }
+ 
+ .quantity.buttons_added input {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  box-shadow: none;
+ }
+ 
+ .quantity.buttons_added .minus,
+ .quantity.buttons_added .plus {
+  padding: 7px 10px 8px;
+  height: 41px;
+  background-color: #ffffff;
+  border: 1px solid #efefef;
+  cursor:pointer;}
+ 
+ .quantity.buttons_added .minus {
+  border-right: 0; }
+ 
+ .quantity.buttons_added .plus {
+  border-left: 0; }
+ 
+ .quantity.buttons_added .minus:hover,
+ .quantity.buttons_added .plus:hover {
+  background: #eeeeee; }
+ 
+ .quantity input::-webkit-outer-spin-button,
+ .quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0; }
+  
+  .quantity.buttons_added .minus:focus,
+ .quantity.buttons_added .plus:focus {
+  outline: none; }
+ 
+ 

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="LHS Pantry gang">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Feed the Future&nbsp|&nbspDashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body class="body">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+            
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            
+            <!-- HEADER DESKTOP-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" href="..\dashboardv2\index.html"><img src="..\inventory\resources\logo_Stroke.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="..\dashboardv2\index.html">My Dashboard</a>
+                <a class="nav-item nav-link" href="..\scanner\Scanner_phone.html">Scanner</a>
+                <a class="nav-item nav-link" href="..\inventory\inventory.html">Inventory</a>
+                <a class="nav-item nav-link" href="..\dashboardv2\addItem.html">Add Item</a>
+                <a class="nav-item nav-link" href="..\profileSettings\index.html">Account</a>
+                <a class="nav-item nav-link" href="..\login_signup\login.html">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1">Lakewood Pantry</h2>
+                                    <button class="au-btn au-btn-icon au-btn--blue" onclick="loadAddItem()">
+                                        <i class="zmdi zmdi-plus"></i>add item</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-t-25">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c1"; style="cursor:pointer;" onclick="loadInventory()">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-gradient"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Inventory</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <!--keeps box big-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c2" style="cursor:pointer;" onclick="loadUsers()">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-account"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Users</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c3" style="cursor:pointer; background-repeat: no-repeat;" onclick="loadSwitch()">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-refresh"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Switch Pantry</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c4" style="cursor:pointer; background-repeat: no-repeat;" onclick="loadAdSettings()">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-settings"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Settings</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                       <div class="row" style="max-width: fit-content; overflow: hidden;">
+                            <div class="col-lg-9">
+                                <h2 class="title-1 m-b-25">Recent Orders</h2>
+                                <div class="table-responsive table--no-card m-b-40" style="max-width: 110%;overflow-x:auto;">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>name</th>
+                                                <th>Date</th>
+                                                <th>Food Name</th>
+                                                <th>Order ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Casey Miltner</td>
+                                                <td>04/22/2021</td>
+                                                <td>Canned Broccoli</td>
+                                                <td class="text-right">26485</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Andrew Riiska</td>
+                                                <td>05/21/2021</td>
+                                                <td>Spaghetti</td>
+                                                <td class="text-right">34622</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Zack Pavelski</td>
+                                                <td>04/19/2021</td>
+                                                <td>Cheesecake Mix</td>
+                                                <td class="text-right">26453</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chris Borg</td>
+                                                <td>04/05/2021</td>
+                                                <td>Pizza Sauce</td>
+                                                <td class="text-right">34325</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jeremey White</td>
+                                                <td>03/06/2017</td>
+                                                <td>Bread</td>
+                                                <td class="text-right">34345</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Martin Martinez</td>
+                                                <td>06/15/2021</td>
+                                                <td>Meatballs</td>
+                                                <td class="text-right">67646</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bethany Tran</td>
+                                                <td>03/21/2021</td>
+                                                <td>Canned Corn</td>
+                                                <td class="text-right">19854</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stefan Mason</td>
+                                                <td>05/31/2021</td>
+                                                <td>Salad Dressing</td>
+                                                <td class="text-right">00393</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2 class="title-1 m-b-25">Most Popular</h2>
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-top-countries">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Mac n Cheese</td>
+                                                        <td class="text-right">23</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Soup</td>
+                                                        <td class="text-right">18</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Bread</td>
+                                                        <td class="text-right">17</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Turkey</td>
+                                                        <td class="text-right">15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ramen</td>
+                                                        <td class="text-right">12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pancake Mix</td>
+                                                        <td class="text-right">10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Canned Corn</td>
+                                                        <td class="text-right">9</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Spaghheti Sauce</td>
+                                                        <td class="text-right">6</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style="margin-left:auto; margin-right:auto;">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Food 4 All Kids - a website created by students, for the students. Project supported by <a href="https://www.hopkinsallchildrens.org/">John Hopkins All Children's Hospital.</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!--button JS-->
+    <script>
+        function loadInventory(){
+            window.location = "../inventory/inventory.html";
+        }
+        function loadAdSettings(){
+            window.location = "../profileSettings/index.html";
+        }
+        function loadUsers(){
+            window.location = "../users/index.html";
+        }
+        function loadAddItem(){
+            window.location = "../dashboardv2/addItem.html";
+        }
+        function loadSwitch(){
+            window.location = "../switchPantry/switchPantry.html";
+        }
+    </script>
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->

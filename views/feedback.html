@@ -1,0 +1,211 @@
+<html lang="en">
+
+<head>
+    <title>Feeding the Future | Inventory</title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- vendor css-->
+    <link href="/fbResources/animsition/animsition.min.css" rel="stylesheet" media="all">
+    
+    <link rel="stylesheet" href="/fbResources/bootstrap.min.css" />
+    <!-- Custom Stylesheet   -->
+    <link rel="stylesheet" href="/fbResources/style.css" />
+
+    
+</head>
+
+<div class="page-container">
+<body class="body" onload="changeDom3()">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" action="dashboard" onclick="window.location.href='/dashboard'"><img src="/images/food4allkidslogoSmall.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
+                <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
+                <a class="nav-item nav-link" id="inventoryTab" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
+                <a class="nav-item nav-link" id="addItemTab" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
+                <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
+                <a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
+                <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends -->
+    
+<div class="section__content section__content--p30">
+    <div class="container">
+        
+<h2>FEED BACK FORM (1-5 RATING)</h2>    
+<div class="container">    
+  <form >    
+    <div class="row">    
+      <div class="col-25">    
+        <label for="q1">How would you rate your app experience?</label>    
+      </div>    
+      <div class="col-75">    
+        &nbsp;&nbsp;<input type="radio" id="op1" name="firstq" value="op1">
+        <label for="op1"> 1</label><br>
+        <input type="radio" id="op2" name="firstq" value="op2">
+        <label for="op2"> 2</label><br>
+        <input type="radio" id="op3" name="firstq" value="op3">
+        <label for="op3"> 3</label><br>
+        <input type="radio" id="op4" name="firstq" value="op4">
+        <label for="op4">&nbsp  4</label><br>
+        <input type="radio" id="op5" name="firstq" value="op5">
+        <label for="op5"> 5</label>    
+      </div>    
+    </div>    
+    <div class="row">    
+      <div class="col-25">    
+        <label for="q2">How would you rate your experience with your local pantry?</label>    
+      </div>    
+      <div class="col-75">    
+        &nbsp;&nbsp;<input type="radio" id="op1-2" name="secondq" value="op1-2">
+        <label for="op1-2"> 1</label><br>
+        <input type="radio" id="op2" name="secondq" value="op2">
+        <label for="op2-2"> 2</label><br>
+        <input type="radio" id="op3" name="secondq" value="op3">
+        <label for="op3-2"> 3</label><br>
+        <input type="radio" id="op4" name="secondq" value="op4">
+        <label for="op4-2">&nbsp 4</label><br>
+        <input type="radio" id="op5" name="secondq" value="op5">
+        <label for="op5-2"> 5</label>     
+      </div>    
+    </div>    
+    <div class="row">    
+        <div class="col-25">    
+          <label for="q3">How important was the food you received today?</label>    
+        </div>    
+        <div class="col-75">    
+          &nbsp;&nbsp;<input type="radio" id="op1" name="thirdq" value="op1-3">
+        <label for="op1-3"> 1</label><br>
+        <input type="radio" id="op2" name="thirdq" value="op2-3">
+        <label for="op2-3"> 2</label><br>
+        <input type="radio" id="op3" name="thirdq" value="op3-3">
+        <label for="op3-3"> 3</label><br>
+        <input type="radio" id="op4" name="thirdq" value="op4-3">
+        <label for="op4-3">&nbsp  4</label><br>
+        <input type="radio" id="op5" name="thirdq" value="op5-3">
+        <label for="op5-3"> 5</label>   
+        </div>    
+      </div>    
+    <div class="row">    
+      <div class="col-25">    
+        <label for="q4">How would you rate the quality of the food you received today?</label>    
+      </div>    
+      <div class="col-75">    
+        &nbsp;&nbsp;<input type="radio" id="op1" name="fourthq" value="op1-4">
+        <label for="op1-4"> 1</label><br>
+        <input type="radio" id="op2" name="fourthq" value="op2-4">
+        <label for="op2-4"> 2</label><br>
+        <input type="radio" id="op3" name="fourthq" value="op3-4">
+        <label for="op3-4"> 3</label><br>
+        <input type="radio" id="op4" name="fourthq" value="op4-4">
+        <label for="op4-4">&nbsp  4</label><br>
+        <input type="radio" id="op5" name="fourthq" value="op5-4">
+        <label for="op5-4"> 5</label>      
+      </div>    
+    </div>
+    <div class="row">    
+        <div class="col-25">    
+          <label for="q4">How would you rate the friendliness of the pantry staff?</label>    
+        </div>    
+        <div class="col-75">    
+          &nbsp;&nbsp;<input type="radio" id="op1" name="fifthq" value="op1-5">
+          <label for="op1-5"> 1</label><br>
+          <input type="radio" id="op2" name="fifthq" value="op2-5">
+          <label for="op2-5"> 2</label><br>
+          <input type="radio" id="op3" name="fifthq" value="op3-5">
+          <label for="op3-5"> 3</label><br>
+          <input type="radio" id="op4" name="fifthq" value="op4-5">
+          <label for="op4-5">&nbsp  4</label><br>
+          <input type="radio" id="op5" name="fifthq" value="op5-5">
+          <label for="op5-5"> 5</label>      
+        </div>    
+      </div>
+      <div class="row">    
+        <div class="col-25">    
+          <label for="q4">How likely are you to come here again?</label>    
+        </div>    
+        <div class="col-75">    
+          &nbsp;&nbsp;<input type="radio" id="op1" name="sixthq" value="op1-6">
+          <label for="op1-6"> 1</label><br>
+          <input type="radio" id="op2" name="sixthq" value="op2-6">
+          <label for="op2-6"> 2</label><br>
+          <input type="radio" id="op3" name="sixthq" value="op3-6">
+          <label for="op3-6"> 3</label><br>
+          <input type="radio" id="op4" name="sixthq" value="op4-6">
+          <label for="op4-6">&nbsp  4</label><br>
+          <input type="radio" id="op5" name="sixthq" value="op5-6">
+          <label for="op5-6"> 5</label>      
+        </div>    
+      </div>
+      <div class="row">    
+        <div class="col-25">    
+          <label for="q4">How easy was it to hear about the pantry here?</label>    
+        </div>    
+        <div class="col-75">    
+          &nbsp;&nbsp;<input type="radio" id="op1" name="seventhq" value="op1-7">
+          <label for="op1-7"> 1</label><br>
+          <input type="radio" id="op2" name="seventhq" value="op2-7">
+          <label for="op2-7"> 2</label><br>
+          <input type="radio" id="op3" name="seventhq" value="op3-7">
+          <label for="op3-7"> 3</label><br>
+          <input type="radio" id="op4" name="seventhq" value="op4-7">
+          <label for="op4-7">&nbsp  4</label><br>
+          <input type="radio" id="op5" name="seventhq" value="op5-7">
+          <label for="op5-7"> 5</label>      
+        </div>    
+      </div>    
+    <div class="row">    
+      <div class="col-25">    
+        <label for="feed_back">Further feedback</label>    
+      </div>    
+      <div class="col-75">    
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>    
+      </div>    
+    </div>    
+    <div class="row"style="margin-left: auto; margin-right: auto; padding-top: 15;">    
+      <input id="submit" type="submit" value="Submit">    
+    </div>    
+  </form>    
+</div>    
+
+    </div>
+
+</body>
+
+
+</div>
+</div>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  	function changeDom3(){
+             //ajax call
+              $.ajax({
+                       url: '/getUser',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+							if(!(data.message.includes('admin'))){
+								document.getElementById('inventoryTab').remove();
+								document.getElementById('addItemTab').remove();
+                             return;}
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+
+</script>
+</html>

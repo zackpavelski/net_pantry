@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <title>Spartan Grub | Sign Up</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charset="utf-8" />
+      <link rel="stylesheet" type="text/css" href="/loginResources/signup_style.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    </head>
+
+    <body class="body">
+      <a href="https://github.com/Mehedi61/Login-form-Sign-up-form"
+        ></a>
+
+      <div class="login-page">
+        <div class="form">
+          <form action="/createUser" class="login-form" method="POST">
+            <fieldset style="border-width:0;">
+                <img src="\images\logo2.png" alt="logo">
+                <input type="text" id="fullName" name="fullName" placeholder="First and Last name" />
+                <input type="text" id="username" name="username" placeholder="Username" />
+                <input type="password" id="password" name="password" placeholder="Password" />
+                <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code" title="Please enter a Zip Code" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$">
+                <input type="text" id="numPeople" name="numPeople" placeholder="Number of people in household" min="1"/>
+                <input type="text" id="numMinors" name="numMinors" placeholder="Number of children in household" />
+                
+                <select id="school" name="school">
+                  <option value="0">Select School:</option>
+                  <option value="Lakewood">Lakewood</option>
+                  <option value="Gibbs">Gibbs</option>
+                  <option value="Hollins">Hollins</option>
+                </select>
+                <br>
+                <br>
+                <button type="submit">
+                  SIGN UP
+                </button>
+            </fieldset>
+            
+          </form>
+          
+  <a href="/">Back to login</a>
+        </div>
+      </div>
+    </body>
+    <script>
+      function show() {
+        var icon = document.querySelector(".fas");
+
+        // ========== Checking type of password ===========
+        if (password.type === "password") {
+          password.type = "text";
+        } else {
+          password.type = "password";
+        }
+      }
+    </script>
+  </html>
+</html>

@@ -1,0 +1,56 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0 10px;
+  height: 100%;
+  background: black;
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  margin: 0;
+  padding: 15px;
+}
+th {
+  text-align: center;
+}
+#container {
+  text-align: center;
+  margin: 0;
+}
+
+#qr-canvas {
+  margin: auto;
+  margin-left: calc(0% - 70px);
+  min-width: 80%; 
+  min-height: 80%;
+  width: auto; 
+  height: auto; 
+  z-index: -100;
+  background-size: cover;
+ 
+  
+}
+
+#btn-scan-qr {
+  cursor: pointer;
+}
+
+#btn-scan-qr img {
+  height: 10em;
+  padding: 15px;
+  margin: 15px;
+  background: white;
+}
+
+#qr-result {
+  font-size: 1.2em;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 700px;
+  background-color: white;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+
+    <!-- Title Page-->
+    <title>Feeding the Future&nbsp|&nbspDashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Vendor CSS-->
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/navbar.css" />
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper" style="height: 100vh;">
+    
+        <div class="page-container">
+            <!--navbar start-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" href="..\dashboardv2\index.html"><img src="..\inventory\resources\logo_Stroke.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="..\dashboardv2\index.html">My Dashboard</a>
+                <a class="nav-item nav-link" href="..\scanner\Scanner_phone.html">Scanner</a>
+                <a class="nav-item nav-link" href="..\inventory\inventory.html">Inventory</a>
+                <a class="nav-item nav-link" href="..\dashboardv2\addItem.html">Add Item</a>
+                <a class="nav-item nav-link" href="..\profileSettings\index.html">Account</a>
+                <a class="nav-item nav-link" href="..\login_signup\login.html">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+        <!--navbar ends-->
+    <div id="qrID">
+        <h2 class="title-1">Lakewood Pantry / Add Item</h2>
+
+        <!-- Get a Placeholder image initially,
+                    this will change according to the
+                    data entered later -->
+                    <div id=printableArea><img src=
+                        "https://chart.googleapis.com/chart?cht=qr&chl=NULL&chs=160x160&chld=L|0"
+                                class="qr-code img-thumbnail img-responsive" style="margin-left: auto; margin-right: auto; display: block;" ></div>
+                    
+                    </div>
+                
+                    <div class="form-horizontal" style="margin-left: 0vw;">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2"
+                        for="content" style="font-size: 16px; margin-top: -1%; margin-left:.25%">
+                        Item:
+                        </label>
+                        <div class="col-sm-10">
+                
+                        <!-- Input box to enter the
+                            required data -->
+                        <input type="text" size="60"
+                            maxlength="60" class="form-control"
+                            id="content" placeholder="Enter Item" style="width: 60vw; border-radius: 10px; background-color: white;" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                
+                        <!-- Button to generate QR Code for
+                        the entered data -->
+                        <button type="button" class="btn btn-default" id="generate" style="border-radius: 10px; background-color: #ffc600; color: white; border: transparent; font-size: 20px; margin-bottom: 10px;">
+                            Generate
+                        </button>
+                        <input type="button" onclick="printDiv('printableArea')" value="      Print 
+                " style="margin-left: 1%; border-radius: 10px; background-color: #ffc600; color: white; border: transparent; font-size: 19px; width: 100px; height: 40px; margin-top: 2px; text-align: center;"/>
+                        <br>
+                        <br>
+                <label class="control-label col-sm-2"
+                        for="content" style="font-size: 16px; margin-top: -1%; margin-left:-1%">
+                        Item to Server:
+                        </label>
+                <input type="text" size="60"
+                        maxlength="60" class="form-control"
+                        id="content" placeholder="Item Name" style="width: 60vw; border-radius: 10px; background-color: white;" />
+                        <br>
+                <input type="text" size="60"
+                        maxlength="60" class="form-control"
+                        id="content" placeholder="Item Quantity" style="width: 60vw; border-radius: 10px; background-color: white;" />
+                        <br>
+                <button type="button" class="btn btn-default" id="generate" style="border-radius: 10px; background-color: #ffc600; color: white; border: transparent; font-size: 20px; margin-bottom: 10px;">
+                    Submit
+                </button>
+                        </div> 
+                    </div>
+                    </div>
+                </div>
+                <script src=
+                    "https://code.jquery.com/jquery-3.5.1.js">
+                </script>
+                
+                <script>
+                    // Function to HTML encode the text
+                    // This creates a new hidden element,
+                    // inserts the given text into it
+                    // and outputs it out as HTML
+                    function htmlEncode(value) {
+                    return $('<div/>').text(value)
+                        .html();
+                    }
+                
+                    $(function () {
+                
+                    // Specify an onclick function
+                    // for the generate button
+                    $('#generate').click(function () {
+                
+                        // Generate the link that would be
+                        // used to generate the QR Code
+                        // with the given data
+                        let finalURL =
+                'https://chart.googleapis.com/chart?cht=qr&chl=' +
+                        htmlEncode($('#content').val()) +
+                        '&chs=160x160&chld=L|0'
+                
+                        // Replace the src of the image with
+                        // the QR code image
+                        $('.qr-code').attr('src', finalURL);
+                    });
+                    });
+                </script>
+                <!--Print Button and Code-->
+                
+                
+                <script>
+                function printDiv(divName) 
+                {
+                    var printContents = document.getElementById(divName).innerHTML;
+                    var originalContents = document.body.innerHTML;
+                
+                    document.body.innerHTML = printContents;
+                
+                    window.print();
+                
+                    document.body.innerHTML = originalContents;
+                }
+                    </script>
+    </div>
+    <script>
+        function loadInventory(){
+            window.location = "../inventory/inventory.html";
+        }
+        function loadAdSettings(){
+            window.location = "../profileEdit/adminProfileSettings.html";
+        }
+        function loadUsers(){
+            window.location = "../inventory/inventory.html";
+        }
+    </script>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

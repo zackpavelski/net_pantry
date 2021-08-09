@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Feeding the Future | Account Settings</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"> <!--edits banner(avatar, student's info, change password')-->
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/fonts.css">
+</head>
+<body>
+		<!--<header class="row align-items-center">/*==<!--header
+			<div class="col-md-4">
+				<div class="logo"><img src="img/chalkboard-teacher.png" alt="logo"></div>
+				<nav>
+					<ul>
+						<li><a href="../Project 1/index.html" class="link">Home</a></li>
+						<li><a href="../Project 2/index.html" class="link">Homework</a></li>
+						<li><a href="index.html" class="link active">Settings</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-md-1 ml-auto"><a href="#"><img src="img/av_64.png" alt="photo"></a></div>
+		</header>-->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" href="..\dashboardv2\index.html"><img src="..\profileSettings\img\logo_Stroke.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="..\dashboardv2\index.html">My Dashboard</a>
+                <a class="nav-item nav-link" href="..\scanner\Scanner_phone.html">Scanner</a>
+                <a class="nav-item nav-link" href="..\inventory\inventory.html">Inventory</a>
+                <a class="nav-item nav-link" href="..\dashboardv2\addItem.html">Add Item</a>
+                <a class="nav-item nav-link" href="..\profileSettings\index.html">Account</a>
+                <a class="nav-item nav-link" href="..\login_signup\login.html">Log Out</a>
+            </div>
+        </div>
+    </nav>
+	<main>
+		<h1 class="mt-4 mb-4">Account Settings</h1>
+		<div class="alert alert-primary row no-gutters">
+			<div class="col-md-2 mr-4">
+				<h2>AVATAR</h2>
+			</div>
+			<div class="col-md ml-2 mr-4">
+				<h2>STUDENT'S INFO</h2>
+			</div>
+			<div class="col-md ml-5">
+				<h2>CHANGE PASSWORD</h2>
+			</div>
+		</div>
+		<div class="row no-gutters mt-4">
+			<div class="col-md-2 mr-4">
+				<img class="w-100" src="img/av_256.png" alt="avatar">
+				<form action="#" method="post" name="avatar_form">
+					<input id="photo" type="file" accept=".gif,.jpg,.jpeg,.png" name="choose_photo">
+					<label class="btn btn-secondary w-100" for="photo">Choose photo</label>
+				</form>
+			</div>
+			<div class="col-md ml-2 mr-4 mt-1">
+				<form action="#" method="post" name="info_form">
+					<input type="text" class="form-control mb-3" id="validationServer01" placeholder="First name" name="first_name" required>
+					<input type="text" class="form-control mb-3" id="validationServer01" placeholder="Last name" name="last_name" required>
+					<input type="email" class="form-control mb-3" id="validationServer01" placeholder="Email" name="email" required>
+					<input type="text" class="form-control mb-3" id="validationServer01" placeholder="Username" name="address" pattern="[0-9]" required>
+					<button class="btn btn-secondary w-100" type="submit">Save changes</button>
+				</form>
+			</div>
+			<div class="col-md ml-2 mt-1">
+				<form action="#" method="post" name="password_form">
+					<input type="password" class="form-control mb-3" id="validationServer01" placeholder="Old password" name="old_password" required>
+					<input type="password" class="form-control mb-3" id="validationServer01" placeholder="New password" name="new_password" required>
+					<input type="password" class="form-control mb-3" id="validationServer01" placeholder="Repeat password" name="repeat_password" required>
+					<button class="btn btn-secondary w-100" type="submit">Change password</button>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

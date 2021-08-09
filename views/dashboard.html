@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="LHS Pantry gang">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Feed the Future&nbsp|&nbspDashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="/dashboardResources/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="/dashboardResources/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="/dashboardResources/css/bootstrap.min.css" />
+
+    <!-- Vendor CSS-->
+    <link href="/dashboardResources/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/dashboardResources/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/dashboardResources/css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="/dashboardResources/css/style.css" />
+
+</head>
+
+<body class="body" onload="changeDom4()">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+            
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            
+            <!-- HEADER DESKTOP-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" action="dashboard" onclick="window.location.href='/dashboard'"><img src="/images/food4allkidslogoSmall.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
+                <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
+                <a class="nav-item nav-link" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
+                <a class="nav-item nav-link" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
+                <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
+                <a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
+                <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
+                
+            </div>
+        </div>
+    </nav>
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1">Lakewood Pantry</h2>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-t-25">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c1"; style="cursor:pointer;" action="inventory" onclick="window.location.href='/inventory'">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-gradient"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Inventory</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <!--keeps box big-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c2" style="cursor:pointer;" action="users" onclick="window.location.href='/users'">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-account"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Users</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c3" style="cursor:pointer; background-repeat: no-repeat;" action="switch" onclick="window.location.href='/switch'">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-refresh"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Switch Pantry</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="overview-item overview-item--c4" style="cursor:pointer; background-repeat: no-repeat;" action="account" onclick="window.location.href='/account'">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="icon">
+                                                <i class="zmdi zmdi-settings"></i>
+                                            </div>
+                                            <div class="text">
+                                                <h2>Settings</h2>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                       <div class="row" style="max-width: fit-content; overflow: hidden;">
+                            <div class="col-lg-9">
+                                <h2 class="title-1 m-b-25">Recent Orders</h2>
+                                <button id="refreh" onclick="changeDom()" style="width: 175px;">Refresh Orders</button>
+                                <button id="refreh" onclick="exportTableToExcel('recentOrders', 'recentOrders')" style="width: 200px; margin-left: -15px;">Download Recent Orders</button>
+                                <div class="table-responsive table--no-card m-b-40" style="max-width: 110%;overflow-x:auto;">
+                                    <table id="recentOrders" class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Items</th>
+                                                <th>Date</th>
+                                                <th>Order ID</th>
+                                                <th>School</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                    </table>
+                                    
+                                </div>
+                               
+                            </div>
+                            <div class="col-lg-3">
+                                <h2 class="title-1 m-b-25">Most Popular</h2>
+                                <button id = refreh style="width: 200px;" onclick="exportTableToExcel('favoritesTable', 'mostPopular')">Download Most Popluar</button>
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-top-countries" id="favoritesTable">
+                                                <tbody>
+                                                    <tr>
+                                                        <th style="color: white">Items</th>
+                                                        <th style="color: white"    >School</th>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row" style="margin-left:auto; margin-right:auto;">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Food 4 All Kids - a website created by students, for the students. Project supported by <a href="https://www.hopkinsallchildrens.org/">John Hopkins All Children's Hospital.</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!--button JS-->
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script>
+             function changeDom(){
+             console.log('connecting');
+             //ajax call
+              $.ajax({
+                       url: '/loadOrders',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+                             $('#recentOrders').append(data.message);
+                             console.log(data.message2);
+                             if(!(data.message2.includes('adm'))){
+                                window.location.href='/studentDash';
+                             }
+                             return;
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+             function changeDom2(){
+            console.log('connecting');
+             //ajax call
+              $.ajax({
+                       url: '/loadFavorites',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+                             $('#favoritesTable').append(data.message);
+                             
+                             return;
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+             function changeDom4(){
+            console.log('connecting');
+             //ajax call
+              $.ajax({
+                       url: '/loadzip',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+                             console.log(data.message);
+                             eval(data.message);
+                             changeDom();
+                             return;
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+        function popup()
+        {
+            window.alert("Button Clicked");
+        }
+    </script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/inventory.js"></script>
+    
+    <!--Excell Export Script Takes Table id, and name of download-->
+    <script>
+        var date = new Date();
+        date = date.getDate;
+    
+        function exportTableToExcel(tableID, filename = ''){
+        var downloadLink;
+        var dataType = 'application/vnd.ms-excel';
+        var tableSelect = document.getElementById(tableID);
+        var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+        
+        // Specify file name
+        filename = filename?filename+'.xls':'excel_data.xls';
+        
+        // Create download link element
+        downloadLink = document.createElement("a");
+        
+        document.body.appendChild(downloadLink);
+        
+        if(navigator.msSaveOrOpenBlob){
+            var blob = new Blob(['\ufeff', tableHTML], {
+                type: dataType
+            });
+            navigator.msSaveOrOpenBlob( blob, filename);
+        }else{
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+        
+            // Setting the file name
+            downloadLink.download = filename;
+            
+            //triggering the function
+            downloadLink.click();
+        }
+    }</script>
+</body>
+
+</html>
+<!-- end document-->

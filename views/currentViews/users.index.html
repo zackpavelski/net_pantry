@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Users</title>
+     <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Custom Stylesheet   -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Table css -->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+</head>
+
+
+<div class="page-container">
+<body class="body">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" href="..\dashboardv2\index.html"><img src="..\inventory\resources\logo_Stroke.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="..\dashboardv2\index.html">My Dashboard</a>
+                <a class="nav-item nav-link" href="..\scanner\Scanner_phone.html">Scanner</a>
+                <a class="nav-item nav-link" href="..\inventory\inventory.html">Inventory</a>
+                <a class="nav-item nav-link" href="..\dashboardv2\addItem.html">Add Item</a>
+                <a class="nav-item nav-link" href="..\profileSettings\index.html">Account</a>
+                <a class="nav-item nav-link" href="..\login_signup\login.html">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends -->
+
+<br>
+
+    <div class="section__content section__content--p30">
+        <div class="container" style="margin-left:-.7%">
+            <form id="form" role="search">
+                <text>Enter:</text> <input type="search" id="firstName" name="q" placeholder="First Name" aria-label="Search through site content">
+            <input type="form" id="lastName" name="q" placeholder="Last Name" aria-label="Search through site content">
+                <text>School: </text> 
+                <select name="school" id="schools">
+                    <option value="lakewood">Lakewood</option>
+                    <option value="hollins">Hollins High</option>
+                    <option value="bearCreak">Bear Creak</option>
+                    <option value="pinellas">Pinellas Park</option>
+                </select>
+                <!--  -->
+                <input type="checkbox" class="check" name="admin" id="" value="admin">Admin
+                <input type="checkbox"  class="check" name="student" id="" value="student">Student
+
+                <button id="submit" class="button" onclick="pull()">Search</button>
+
+            </form>
+            <br>
+
+            <!-- table start -->
+            <div class="row">
+                <div class="col-lg-9">
+                    <h2 class="title-1 m-b-25">Recent Orders</h2>
+                    <div class="table-responsive table--no-card m-b-40">
+                        <table class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                    <th>name</th>
+                                    <th>Date</th>
+                                    <th>Food Name</th>
+                                    <th>Order ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Casey Miltner</td>
+                                    <td>04/22/2021</td>
+                                    <td>Canned Broccoli</td>
+                                    <td class="text-right">26485</td>
+                                </tr>
+                                <tr>
+                                    <td>Andrew Riiska</td>
+                                    <td>05/21/2021</td>
+                                    <td>Spaghetti</td>
+                                    <td class="text-right">34622</td>
+                                </tr>
+                                <tr>
+                                    <td>Zack Pavelski</td>
+                                    <td>04/19/2021</td>
+                                    <td>Cheesecake Mix</td>
+                                    <td class="text-right">26453</td>
+                                </tr>
+                                <tr>
+                                    <td>Chris Borg</td>
+                                    <td>04/05/2021</td>
+                                    <td>Pizza Sauce</td>
+                                    <td class="text-right">34325</td>
+                                </tr>
+                                <tr>
+                                    <td>Jeremey White</td>
+                                    <td>03/06/2017</td>
+                                    <td>Bread</td>
+                                    <td class="text-right">34345</td>
+                                </tr>
+                                <tr>
+                                    <td>Martin Martinez</td>
+                                    <td>06/15/2021</td>
+                                    <td>Meatballs</td>
+                                    <td class="text-right">67646</td>
+                                </tr>
+                                <tr>
+                                    <td>Bethany Tran</td>
+                                    <td>03/21/2021</td>
+                                    <td>Canned Corn</td>
+                                    <td class="text-right">19854</td>
+                                </tr>
+                                <tr>
+                                    <td>Stefan Mason</td>
+                                    <td>05/31/2021</td>
+                                    <td>Salad Dressing</td>
+                                    <td class="text-right">00393</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- table end -->
+
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- checkbox script -->
+<script>
+    $(document).ready(function(){
+        $('input:checkbox').click(function() {
+            $('input:checkbox').not(this).prop('checked', false);
+        });
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.check').click(function() {
+                $('.check').not(this).prop('checked', false);
+            });
+        });
+        </script>
+
+ 
+</body>
+ 
+</html>

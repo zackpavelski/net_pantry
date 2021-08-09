@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+<html>
+<head>
+  <title>Feeding the Future | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="thankyou.css">
+  <script type="text/javascript" src="../cookies.js"></script>
+  <script type="text/javascript" src="../login_signup/login.js"></script>
+
+   <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+</head>
+
+<body class="body">
+	
+	<!--<a href="https://github.com/Mehedi61/Login-form-Sign-up-form">  link to github--> 
+
+<div class="login-page">
+  <div class="form">
+    <img src="..\login_signup\resources\logo2.png" alt="logo">
+    <div class="greenBox">
+<text class="space"><span>&#10003; &nbsp</span> An email message has been sent containing a link to reset your password.</text></div><br>
+  <a href="../login_signup/login.html">Back to login</a>
+  </div>
+</div>
+  <script>
+    function doCookie(){
+      
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var days = 1;
+      createCookie(email, password, days);
+    }
+    function createCookie(name,value,days) {
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+      }
+      else var expires = "";
+      document.cookie = name+"="+value+expires+"; path=/";
+    }
+
+    function readCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    function eraseCookie(name) {
+      createCookie(name,"",-1);
+    }
+  </script>
+  <script src="../login_signup/login.js"></script>
+  <script>
+    function show(){
+      var password = document.getElementById("password");
+      var icon = document.querySelector(".fas")
+
+      // ========== Checking type of password ===========
+      if(password.type === "password"){
+        password.type = "text";
+      }
+      else {
+        password.type = "password";
+      }
+    };
+  </script>
+</body>
+</html>
+

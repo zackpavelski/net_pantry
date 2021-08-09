@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+
+    <!-- Title Page-->
+    <title>Feeding the Future&nbsp|&nbspDashboard</title>
+
+    <!-- Fontfaces CSS-->
+
+    <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="/addResources/bootstrap.min.css" />
+
+    <!-- Vendor CSS-->
+
+    <!-- Main CSS-->
+    
+    <link rel="stylesheet" href="/dashboardResources/css/navbar.css" />
+    <link rel="stylesheet" href="/addResources/style.css" />
+
+</head>
+
+<body class="animsition" onload="changeDom3()">
+    <div class="page-wrapper" style="height: 100vh;">
+    
+        <div class="page-container">
+            <!--navbar start-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" action="dashboard" onclick="window.location.href='/dashboard'"><img src="/images/food4allkidslogoSmall.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
+                <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
+                <a class="nav-item nav-link" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
+                <a class="nav-item nav-link" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
+                <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
+                <a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
+                <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+        <!--navbar ends-->
+        
+<div class="section__content section__content--p30>" style="padding: 15px 30px; animation: transitionIn .75s;">
+    <div id="qrID">
+        <h2 class="title-1">Add Item </h2>/ <h4>Lakewood Pantry</h4>
+
+        <!-- Get a Placeholder image initially,
+                    this will change according to the
+                    data entered later -->
+                    <div id=printableArea><img src=
+                        "https://chart.googleapis.com/chart?cht=qr&chl=NULL&chs=160x160&chld=L|0"
+                                class="qr-code img-thumbnail img-responsive" style="margin-left: auto; margin-right: auto; display: block;" ></div>
+                    
+                    </div>
+                
+                    <div class="form-horizontal" style="margin-left: 0vw;">
+                    <div class="form-group" style="padding-left: 31%;padding-right: 25%;">
+                        <label class="control-label col-sm-2"
+                        for="content" style="font-size: 16px; margin-top: -1%;margin-left: -16%">
+                        Item:
+                        </label>
+                        <div class="col-sm-10">
+                
+                        <!-- Input box to enter the
+                            required data -->
+                        <input type="text" size="60"
+                            maxlength="60" class="form-control"
+                            id="content" placeholder="Enter Item" style="width: 100%; border-radius: 10px; background-color: white;" />
+                        </div>
+                        <div class="col-sm-offset-2 col-sm-10" style="padding-top: 15px;">
+                
+                        <!-- Button to generate QR Code for
+                        the entered data -->
+                        <button type="button" class="btn btn-default" id="generate">Generate</button>
+                        <input type="button" id="print" onclick="printDiv('printableArea')" value="Print">
+                        <br>
+                        <br>
+
+
+
+                <form action="/insertInventory" method="POST">
+                    <fieldset>
+                        <label class="control-label col-sm-2"
+                        for="content" style="font-size: 16px; margin-top: -1%; margin-left:-1%">
+                        Item to Server:
+                        </label>
+                        
+                        <input type="text" placeholder="Item Name" name="itemName" id="itemName" size="60" maxlength="60" class="form-control" style="width: 100%; border-radius: 10px; background-color: white;"/>
+                        
+                        <input type="text" placeholder="Item Quantity" name="itemQuantity" id="itemQuantity" size="60" maxlength="60" class="form-control" style="width: 100%; border-radius: 10px; background-color: white;" />
+                        <select id="school" name="school">
+                            <option value="0">Select School:</option>
+                            <option value="Lakewood">Lakewood</option>
+                            <option value="Gibbs">Gibbs</option>
+                            <option value="Hollins">Hollins</option>
+                          </select>
+                        <button type="submit" id="submit" class="btn btn-default">
+                            Submit
+                        </button>
+                    </fieldset>
+                </form>
+                
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        
+                    </div>
+                    </div>
+                </div>
+
+                <div id="setup">
+                    <h1 id="setup">Printer Setup</h1>
+                    <text id="download">Downloads file when clicked</text>
+                    <button id="buttons" onclick="window.open('https://filedn.com/lTeuFbsT5lEpRomEtPDahLb/Munbyn-Mac-Driver-ITPP941-942-249-Latest-v1.5.2.dmg')">Mac Drivers</button>
+                    <button id="buttons" onclick="window.open('https://munbyn.biz/wind')">Windows Drivers</button>
+                    <button id="buttons" onclick="window.open('https://cdn.shopify.com/s/files/1/2652/5526/files/ITPP941_User_Manual2.0.4.pdf?v=1616382432')">Manual</button>
+                </div>
+
+                </div>
+
+                
+                <script src=
+                    "https://code.jquery.com/jquery-3.5.1.js">
+                </script>
+                
+                <script>
+                    // Function to HTML encode the text
+                    // This creates a new hidden element,
+                    // inserts the given text into it
+                    // and outputs it out as HTML
+                    function htmlEncode(value) {
+                    return $('<div/>').text(value)
+                        .html();
+                    }
+                
+                    $(function () {
+                
+                    // Specify an onclick function
+                    // for the generate button
+                    $('#generate').click(function () {
+                
+                        // Generate the link that would be
+                        // used to generate the QR Code
+                        // with the given data
+                        let finalURL =
+                'https://chart.googleapis.com/chart?cht=qr&chl=' +
+                        htmlEncode($('#content').val()) +
+                        '&chs=160x160&chld=L|0'
+                
+                        // Replace the src of the image with
+                        // the QR code image
+                        $('.qr-code').attr('src', finalURL);
+                    });
+                    });
+                </script>
+                <!--Print Button and Code-->
+                
+                
+                <script>
+                function printDiv(divName) 
+                {
+                    var printContents = document.getElementById(divName).innerHTML;
+                    var originalContents = document.body.innerHTML;
+                
+                    document.body.innerHTML = printContents;
+                
+                    window.print();
+                
+                    document.body.innerHTML = originalContents;
+                }
+                    </script>
+    </div>
+    <script>
+                    function changeDom3(){
+                $.ajax({
+                       url: '/getUser',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+                            if(!(data.message.includes('admin'))){
+                                window.location.href='/studentDash';                            }
+                             return;
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+            };
+    </script>
+    <script>
+        function loadInventory(){
+            window.location = "../inventory/inventory.html";
+        }
+        function loadAdSettings(){
+            window.location = "../profileEdit/adminProfileSettings.html";
+        }
+        function loadUsers(){
+            window.location = "../inventory/inventory.html";
+        }
+    </script>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

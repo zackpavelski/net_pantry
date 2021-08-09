@@ -1,0 +1,144 @@
+<html>  
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/scannerResources/bootstrap.min.css" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1"/>
+      <!-- added for qty counter -->
+      <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
+      <link rel="stylesheet" type="text/css" href="/scannerResources/style.css" />
+        <link rel="stylesheet" type="text/css" href="/scannerResources/modal.css" />
+    
+  </head>
+  
+  <body onload="changeDom3()">
+        <div class="page-container">
+    <!--navbar start-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand head" action="dashboard" onclick="window.location.href='/dashboard'"><img src="/images/food4allkidslogoSmall.png" alt="logo">
+</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+          aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
+              <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
+              <a class="nav-item nav-link" id="inventoryTab" action="/inventory" onclick="window.location.href='/inventory'">Inventory</a>
+              <a class="nav-item nav-link" id="addItemTab" action="/additem" onclick="window.location.href='/addItem'">Add Item</a>
+              <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
+              <a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
+              <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
+          </div>
+      </div>
+  </nav>
+    <!--navbar ends-->
+
+    <p id="ordersID" style="display: none"></p>
+
+    <div id="container">
+
+      <h1 id="header">Food Scanner</h1>
+
+      <div id="vid_container" style="z-index: 2; width: auto; height: 100vh; margin-top: -5vh;">
+        <a id="btn-scan-qr"></a>
+        <canvas id="qr-canvas" style="margin-top: 5vh; width: 50vmax; z-index: 20; margin-left: auto; margin-right: auto; display: block; border-radius: 25px; border-color:  rgb(255, 159, 0); border-width: thick; border-style: solid; margin-top: 50px;" height="480" width="640"></canvas>
+        <!--This is the table that the items get put into-->
+        <text>Items</text>
+        
+        <div id="Table" style="padding:15px;">
+          <div id="listID" style="font-family: 'Noto Sans', 'Helvetica'; font-size: 20px; color:  #236dad; margin-top: -4vh; text-align: center; margin-right: auto; margin-left: auto; display: block;">
+            <div id="enterQty" style="margin-top: 5%;">
+            <label>Qty of item being scanned:</label>
+            <div class="quantity buttons_added">
+              <input type="button" value="-" class="minus"><input type="number" id="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+            </div>
+            </div>
+            <table id="itemTable" style="font-family: 'Noto Sans', 'Helvetica';font-size: 5vw;color: black; position: relative; margin-top: 5px; margin-left: 34%; margin-right:30%;">
+            <tr>
+                <th>Foods Scanned</th>
+                <th>Qty</th>
+            </tr>
+              
+          </table>
+             
+          
+            <button id="orderFin" onclick="submitOrders()" style="scroll-margin-bottom:0vh; width: auto; margin-right: auto; margin-left: auto; display: block;">Finish Order</button>
+          
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <div class="row" style="margin-left:auto; margin-right:auto;padding-top:.4em;">
+        <div class="col-md-12">
+            
+        </div>
+</div>
+      
+        
+        
+        
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script src="/scannerResources/qrCodeScanner.js"></script>
+    <script>
+        function submitOrders(){
+    //ajax call
+    console.log('in ajax call');
+     $.ajax({
+              
+              url: '/postOrder',
+              method:'POST',
+              data: {
+                 items: document.getElementsByTagName("p")[0].innerHTML
+               }
+            }).done(function(data){
+                if(data.success){
+                    console.log("Success");
+                    location.reload();
+                }
+            }).fail(function(){
+               //do nothing ....
+                console.log('failed...');
+                return;
+            });
+    };
+    function changeDom3(){
+             //ajax call
+              $.ajax({
+                       url: '/getUser',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+							if(!(data.message.includes('admin'))){
+								document.getElementById('inventoryTab').remove();
+								document.getElementById('addItemTab').remove();
+                             return;}
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+
+      </script>
+
+  
+
+  </body>
+  </div>
+
+  
+</html>

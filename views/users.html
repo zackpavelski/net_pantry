@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Users</title>
+     <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/usersResources/bootstrap.min.css" />
+    <!-- Custom Stylesheet   -->
+    <link rel="stylesheet" href="/usersResources/style.css" />
+    <!-- Table css -->
+    <link href="/usersResources/theme.css" rel="stylesheet" media="all">
+</head>
+
+
+<div class="page-container">
+<body class="body" onload="loadUsers()">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand head" action="dashboard" onclick="window.location.href='/dashboard'"><img src="/images/food4allkidslogoSmall.png" alt="logo">
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
+                <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
+                <a class="nav-item nav-link" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
+                <a class="nav-item nav-link" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
+                <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
+                <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends -->
+
+<br>
+
+    <div class="section__content section__content--p30">
+        <div class="container" style="margin-left:-.7%">
+            
+            <br>
+
+            <!-- table start -->
+            <div class="row">
+                <div class="col-lg-9">
+                    <h2 class="title-1 m-b-25">User Information</h2>
+                    <!--<button id="download" onclick="exportTableToExcel('usersTable', 'currentUsers')">Download Users</button>-->
+                    <div class="table-responsive table--no-card m-b-40">
+                        <table onload="loadUsers()" id="usersTable" class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                    <th>name</th>
+                                    <th>username</th>
+                                    <th># people</th>
+                                    <th># minors</th>
+                                    <th>zipcode</th>
+                                    <th>school</th>
+                                </tr>
+                            </thead>
+                                
+                        </table>
+                    </div>
+                </div>
+                
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- table end -->
+<script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    function loadUsers(){
+             console.log('connecting');
+             //ajax call
+              $.ajax({
+                       url: '/loadUsers',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+                             console.log(data.message);
+                             $('#usersTable ').append(data.message);
+                            
+                             return;
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+</script>
+<script>
+    $(document).ready(function(){
+        $('input:checkbox').click(function() {
+            $('input:checkbox').not(this).prop('checked', false);
+        });
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.check').click(function() {
+                $('.check').not(this).prop('checked', false);
+            });
+        });
+        </script>
+        <!--Checks to see if button is working-->
+        <script>
+            function popup()
+            {
+                window.alert("Button Clicked");
+            }
+        </script>
+
+        <script>
+            function exportTableToExcel(tableID, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+        </script>
+
+ 
+</body>
+ 
+</html>
