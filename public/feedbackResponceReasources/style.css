@@ -1,0 +1,74 @@
+ 
+* {    
+    box-sizing: border-box;    
+  }    
+      
+  table {
+    border-collapse:separate;
+    border:solid whitesmoke 2px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+  }
+  .table_background {
+    background-color: white;
+    margin-left: .5vw;
+    margin-right: 3vw;
+    margin-bottom: 3vh;
+    margin-top: 1vh;
+  }
+  
+  #checkOutTable {
+    font-weight: 400;
+    font-style: normal;
+    border-collapse: collapse;
+    width: 40%;
+  }
+  #checkOutTable tr:nth-child(even) {
+  background-color: /*#eee;*/#eff2f5
+  }
+  #checkOutTable tr:nth-child(odd) {
+  background-color: /*#fff*/rgba(114, 114, 113, 0.3);
+  padding: 10px 10px 10px 10px;
+  text-align: left;
+  }
+  #checkOutTable th {
+  color: white;
+  background-color:#333333; /*header of checkout table*/
+  font-size: 18px;
+  text-align: left;
+  padding: 5px 5px 5px 5px;
+  border-radius: 2pt;
+    box-shadow: 0 0 0 1pt grey;
+  }
+
+  #header
+  {
+    color: #526e86;
+    margin-left: 100px;
+    padding-bottom: 15px;
+  }
+  #actionButtons
+  {
+    margin-left: 100px;
+
+  }
+
+  #buttons
+  {
+      
+  /*Enable Auto Center :)
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  */
+  text-align: center;
+  width: 200px;
+  margin-bottom: 5px;
+  padding: 8px;
+  background-color: #ffc600; 
+  color: white;
+  border: none;
+  font-size: large;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgba(114, 114, 113, 0.3);
+  }

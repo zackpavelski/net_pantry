@@ -43,6 +43,7 @@ exports.setRequestUrl=function(app){
     app.get('/switch', user.switch);
     app.get('/forgotPass', user.forgotPass);
     app.get('/thank', user.thank);
+    app.get('/feedbackResponse', user.feedbackResponse)
     
     app.post('/getUser', function(req, response){
         response.send({success: true, message: localStorage.getItem('name')});

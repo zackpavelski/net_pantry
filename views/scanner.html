@@ -52,7 +52,35 @@
         <canvas id="qr-canvas" style="margin-top: 5vh; width: 50vmax; z-index: 20; margin-left: auto; margin-right: auto; display: block; border-radius: 25px; border-color:  rgb(255, 159, 0); border-width: thick; border-style: solid; margin-top: 50px;" height="480" width="640"></canvas>
         <!--This is the table that the items get put into-->
         <text>Items</text>
+        <br>
+
+        <!--begins popup add item modal-->
+        <a href="#openModal">Scanner not working? Click here to manually add items.</a>
+        <div id="openModal" class="modalDialog">
         
+        <a href="#close" title="Close" class="close">X</a>
+        <h2 style="padding-top:10px;"> Add item</h2>
+        <div class="form">
+          <form action="/action_page.php">
+          <label for="item">Item:</label>
+          <input type="text" id="item" name="food" placeholder="Banana, Canned Corn, etc...">
+
+          <label for="macro"> Macro:</label>
+          <select id="macro" name="macro">
+            <option value="carb">Carb (ex. Bread, Pasta, Cereal)</option>
+            <option value="protein">Protein (ex. Meat or Eggs)</option>
+            <option value="fat">Fat (ex. Oils, Dairy, Nuts)</option>
+            </select>
+
+          <label for="qty">Qty:</label>
+          <input type="text" id="qty" name="qty" placeholder="1, 2, 3, etc...">
+
+
+          <input type="submit" avlue="Add to Cart">
+          </form>
+        </div>
+      </div>
+      <!--end popup add item modal-->
         <div id="Table" style="padding:15px;">
           <div id="listID" style="font-family: 'Noto Sans', 'Helvetica'; font-size: 20px; color:  #236dad; margin-top: -4vh; text-align: center; margin-right: auto; margin-left: auto; display: block;">
             <div id="enterQty" style="margin-top: 5%;">
