@@ -58,12 +58,10 @@
         <!-- Get a Placeholder image initially,
                     this will change according to the
                     data entered later -->
-                    <div id=printableArea><img src=
-                        "https://chart.googleapis.com/chart?cht=qr&chl=NULL&chs=160x160&chld=L|0"
-                                class="qr-code img-thumbnail img-responsive" style="margin-left: auto; margin-right: auto; display: block;" >
-                                <p style="position:relative;left: 48%" id="itemID"></p>
-                            </div>
                     
+                    <div id="printableArea">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=Null&amp;size=160x160" alt="" title="" />
+                        <p style="position:relative;left: 48%" id="itemID"></p>
                     </div>
                 
                     <div class="form-horizontal" style="margin-left: 0vw;">
@@ -161,11 +159,7 @@
                         // Generate the link that would be
                         // used to generate the QR Code
                         // with the given data
-                        let finalURL =
-                'https://chart.googleapis.com/chart?cht=qr&chl=' +
-                        htmlEncode($('#content').val()) +
-                        '&chs=160x160&chld=L|0'
-                
+                        let finalURL = 'https://api.qrserver.com/v1/create-qr-code/?data=' + htmlEncode($('#content').val()) + '&amp;size=160x160';
                         // Replace the src of the image with
                         // the QR code image
                         $('.qr-code').attr('src', finalURL);
@@ -178,18 +172,15 @@
                 
                 
                 <script>
-                function printDiv(divName) 
-                {
-                    var printContents = document.getElementById(divName).innerHTML;
-                    var originalContents = document.body.innerHTML;
-                
-                    document.body.innerHTML = printContents;
-                
-                    window.print();
-                
-                    document.body.innerHTML = originalContents;
-                }
-                    </script>
+                    function printDiv() {
+                        var divContents = document.getElementById("printableArea").innerHTML;
+                        var a = window.open('', '', 'height=500, width=500');
+                        a.document.write(divContents);
+                        a.document.close();
+                        a.print();
+                    }
+                </script>
+
     </div>
     <script>
                     function changeDom3(){
