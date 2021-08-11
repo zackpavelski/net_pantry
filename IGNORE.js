@@ -35,7 +35,7 @@ connection.connect(function(err){
     var sql = "CREATE TABLE orders (id INT, name VARCHAR(255), items VARCHAR(255))";
     var add = "CREATE TABLE orders (id int(11) NOT NULL AUTO_INCREMENT, name VARCHAR(100), items VARCHAR(255), date VARCHAR(255), PRIMARY KEY(id))"
 
-    connection.query("DESCRIBE lhsInventory", function(err, result){
+    connection.query("ALTER TABLE feedback DROP q7", function(err, result){
         if(err) throw err;
         console.log(result);
     });

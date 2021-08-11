@@ -1,5 +1,9 @@
 <html lang="en">
-
+<style>
+  .row{
+    margin-bottom:5%;
+  }
+</style>
 <head>
     <title>Feeding the Future | Inventory</title>
     <!-- Required meta tags -->
@@ -44,22 +48,14 @@
         
 <h2>FEED BACK FORM (1-5 RATING)</h2>    
 <div class="container">    
-  <form >    
+  <form id="feedBackForm">    
     <div class="row">    
       <div class="col-25">    
         <label for="q1">How would you rate your app experience?</label>    
       </div>    
       <div class="col-75">    
-        &nbsp;&nbsp;<input type="radio" id="op1" name="firstq" value="op1">
-        <label for="op1"> 1</label><br>
-        <input type="radio" id="op2" name="firstq" value="op2">
-        <label for="op2"> 2</label><br>
-        <input type="radio" id="op3" name="firstq" value="op3">
-        <label for="op3"> 3</label><br>
-        <input type="radio" id="op4" name="firstq" value="op4">
-        <label for="op4">&nbsp  4</label><br>
-        <input type="radio" id="op5" name="firstq" value="op5">
-        <label for="op5"> 5</label>    
+        <input id="q1" type="range" min="1" max="5" value="2">
+
       </div>    
     </div>    
     <div class="row">    
@@ -67,16 +63,7 @@
         <label for="q2">How would you rate your experience with your local pantry?</label>    
       </div>    
       <div class="col-75">    
-        &nbsp;&nbsp;<input type="radio" id="op1-2" name="secondq" value="op1-2">
-        <label for="op1-2"> 1</label><br>
-        <input type="radio" id="op2" name="secondq" value="op2">
-        <label for="op2-2"> 2</label><br>
-        <input type="radio" id="op3" name="secondq" value="op3">
-        <label for="op3-2"> 3</label><br>
-        <input type="radio" id="op4" name="secondq" value="op4">
-        <label for="op4-2">&nbsp 4</label><br>
-        <input type="radio" id="op5" name="secondq" value="op5">
-        <label for="op5-2"> 5</label>     
+        <input id="q2" type="range" min="1" max="5" value="2">
       </div>    
     </div>    
     <div class="row">    
@@ -84,50 +71,15 @@
           <label for="q3">How important was the food you received today?</label>    
         </div>    
         <div class="col-75">    
-          &nbsp;&nbsp;<input type="radio" id="op1" name="thirdq" value="op1-3">
-        <label for="op1-3"> 1</label><br>
-        <input type="radio" id="op2" name="thirdq" value="op2-3">
-        <label for="op2-3"> 2</label><br>
-        <input type="radio" id="op3" name="thirdq" value="op3-3">
-        <label for="op3-3"> 3</label><br>
-        <input type="radio" id="op4" name="thirdq" value="op4-3">
-        <label for="op4-3">&nbsp  4</label><br>
-        <input type="radio" id="op5" name="thirdq" value="op5-3">
-        <label for="op5-3"> 5</label>   
+              <input id="q3" type="range" min="1" max="5" value="2">
         </div>    
       </div>    
-    <div class="row">    
-      <div class="col-25">    
-        <label for="q4">How would you rate the quality of the food you received today?</label>    
-      </div>    
-      <div class="col-75">    
-        &nbsp;&nbsp;<input type="radio" id="op1" name="fourthq" value="op1-4">
-        <label for="op1-4"> 1</label><br>
-        <input type="radio" id="op2" name="fourthq" value="op2-4">
-        <label for="op2-4"> 2</label><br>
-        <input type="radio" id="op3" name="fourthq" value="op3-4">
-        <label for="op3-4"> 3</label><br>
-        <input type="radio" id="op4" name="fourthq" value="op4-4">
-        <label for="op4-4">&nbsp  4</label><br>
-        <input type="radio" id="op5" name="fourthq" value="op5-4">
-        <label for="op5-4"> 5</label>      
-      </div>    
-    </div>
     <div class="row">    
         <div class="col-25">    
           <label for="q4">How would you rate the friendliness of the pantry staff?</label>    
         </div>    
         <div class="col-75">    
-          &nbsp;&nbsp;<input type="radio" id="op1" name="fifthq" value="op1-5">
-          <label for="op1-5"> 1</label><br>
-          <input type="radio" id="op2" name="fifthq" value="op2-5">
-          <label for="op2-5"> 2</label><br>
-          <input type="radio" id="op3" name="fifthq" value="op3-5">
-          <label for="op3-5"> 3</label><br>
-          <input type="radio" id="op4" name="fifthq" value="op4-5">
-          <label for="op4-5">&nbsp  4</label><br>
-          <input type="radio" id="op5" name="fifthq" value="op5-5">
-          <label for="op5-5"> 5</label>      
+          <input id="q5" type="range" min="1" max="5" value="2">
         </div>    
       </div>
       <div class="row">    
@@ -135,16 +87,8 @@
           <label for="q4">How likely are you to come here again?</label>    
         </div>    
         <div class="col-75">    
-          &nbsp;&nbsp;<input type="radio" id="op1" name="sixthq" value="op1-6">
-          <label for="op1-6"> 1</label><br>
-          <input type="radio" id="op2" name="sixthq" value="op2-6">
-          <label for="op2-6"> 2</label><br>
-          <input type="radio" id="op3" name="sixthq" value="op3-6">
-          <label for="op3-6"> 3</label><br>
-          <input type="radio" id="op4" name="sixthq" value="op4-6">
-          <label for="op4-6">&nbsp  4</label><br>
-          <input type="radio" id="op5" name="sixthq" value="op5-6">
-          <label for="op5-6"> 5</label>      
+          <input id="q6" type="range" min="1" max="5" value="2">
+ 
         </div>    
       </div>
       <div class="row">    
@@ -152,16 +96,8 @@
           <label for="q4">How easy was it to hear about the pantry here?</label>    
         </div>    
         <div class="col-75">    
-          &nbsp;&nbsp;<input type="radio" id="op1" name="seventhq" value="op1-7">
-          <label for="op1-7"> 1</label><br>
-          <input type="radio" id="op2" name="seventhq" value="op2-7">
-          <label for="op2-7"> 2</label><br>
-          <input type="radio" id="op3" name="seventhq" value="op3-7">
-          <label for="op3-7"> 3</label><br>
-          <input type="radio" id="op4" name="seventhq" value="op4-7">
-          <label for="op4-7">&nbsp  4</label><br>
-          <input type="radio" id="op5" name="seventhq" value="op5-7">
-          <label for="op5-7"> 5</label>      
+          <input id="q7" type="range" min="1" max="5" value="2">
+     
         </div>    
       </div>    
     <div class="row">    
@@ -169,11 +105,11 @@
         <label for="feed_back">Further feedback</label>    
       </div>    
       <div class="col-75">    
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>    
+        <textarea id="q4"  placeholder="Write something.." style="height:200px"></textarea>    
       </div>    
     </div>    
     <div class="row"style="margin-left: auto; margin-right: auto; padding-top: 15;">    
-      <input id="submit" type="submit" value="Submit">    
+      <button id="" onclick="postFeedback()">Submit</button>    
     </div>    
   </form>    
 </div>    
@@ -198,7 +134,37 @@
 							if(!(data.message.includes('admin'))){
 								document.getElementById('inventoryTab').remove();
 								document.getElementById('addItemTab').remove();
+                if(data.message.includes('admin')){
+                  window.location.href='/adminFeedback';
+                }
                              return;}
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+             function postFeedback(){
+               console.log('in feedback');
+             //ajax call
+              $.ajax({
+                       url: '/postFeedback',
+                       method:'POST',
+                       data: {
+                        q1: document.getElementById('q1').value,
+                        q2: document.getElementById('q2').value,
+                        q3: document.getElementById('q3').value,
+                        q4: document.getElementById('q7').value,
+                        q5: document.getElementById('q5').value,
+                        q6: document.getElementById('q6').value,
+                        q7: document.getElementById('q4').value
+               }
+                     }).done(function(data){
+                         if(data.success){
+                            console.log('1 record inserted');
+                            window.location.href='/studentDash'
+                             return;
                          }
                      }).fail(function(){
                         //do nothing ....

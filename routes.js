@@ -448,10 +448,18 @@ exports.setRequestUrl=function(app){
             password: 'Pantry21!',
             database: 'pantrydb'
         });
-        //paragraph date q1-q7
-        connection.query(`INSERT INTO feedback (feedback) VALUES ('${req.body.feedback}')`, function(err, result){
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
 
-        });
+        today = mm + '/' + dd + '/' + yyyy;
+
+        //paragraph date q1-q7
+        connection.query(`INSERT INTO feedback (paragraph, date, q1, q2, q3, q4, q5, q6) VALUES ('${req.body.q7}','${today}', '${req.body.q1}', '${req.body.q2}', '${req.body.q3}', '${req.body.q4}', '${req.body.q5}', '${req.body.q6}')`, function(err, result){
+                if(err) throw err;
+                else console.log('1 record inserted');
+          });
     });
     app.post('/postOrder', function(req, response){
         var connection = mysql.createConnection({
