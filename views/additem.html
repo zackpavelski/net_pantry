@@ -60,7 +60,7 @@
                     data entered later -->
                     
                     <div id="printableArea">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=Null&amp;size=160x160" alt="" title="" />
+                        <img id="qr-code" style="position:relative; left:44%" src="https://api.qrserver.com/v1/create-qr-code/?data=Null&amp;size=160x160" alt="" title="" />
                         <p style="position:relative;left: 48%" id="itemID"></p>
                     </div>
                 
@@ -159,10 +159,10 @@
                         // Generate the link that would be
                         // used to generate the QR Code
                         // with the given data
-                        let finalURL = 'https://api.qrserver.com/v1/create-qr-code/?data=' + htmlEncode($('#content').val()) + '&amp;size=160x160';
+                        let finalURL = 'https://api.qrserver.com/v1/create-qr-code/?data=' + htmlEncode(document.getElementById('content').value) + '&amp;size=160x160';
                         // Replace the src of the image with
                         // the QR code image
-                        $('.qr-code').attr('src', finalURL);
+                        document.getElementById('qr-code').src = finalURL;
                         getMaxID();
 
                     });

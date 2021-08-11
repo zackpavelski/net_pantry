@@ -35,9 +35,9 @@ connection.connect(function(err){
     var sql = "CREATE TABLE orders (id INT, name VARCHAR(255), items VARCHAR(255))";
     var add = "CREATE TABLE orders (id int(11) NOT NULL AUTO_INCREMENT, name VARCHAR(100), items VARCHAR(255), date VARCHAR(255), PRIMARY KEY(id))"
 
-    connection.query("SELECT id FROM lhsInventory WHERE item_name = 'Pasta' LIMIT 1", function(err, result){
+    connection.query("DESCRIBE lhsInventory", function(err, result){
         if(err) throw err;
-        console.log(result[0].id)
+        console.log(result);
     });
 
     /*connection.query("CREATE TABLE feedback (id int(11) NOT NULL AUTO_INCREMENT, paragraph VARCHAR(1000), date VARCHAR(50), PRIMARY KEY(id))", function(err, result){

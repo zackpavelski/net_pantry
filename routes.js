@@ -57,31 +57,25 @@ exports.setRequestUrl=function(app){
             database: 'pantrydb'
         });
 
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
 
-        today = mm + '/' + dd + '/' + yyyy;
+     
 
         var school = req.body.school;
         var sqlquery;
-        switch (school) {
-            case school=='Gibbs':
-                sqlquery = `INSERT INTO gibsInventory (name, items, date, school) VALUES (${request.body.itemName}, ${request.body.itemQuantity}, ${today}, ${school});`;
-                break;
-            case school=='Lakewood':
-                sqlquery = `INSERT INTO lhsInventory (name, items, date, school) VALUES (${request.body.itemName}, ${request.body.itemQuantity}, ${today}, ${school});`;
-                break;
-            case school=='Hollins':
-                sqlquery = `INSERT INTO hollinsInventory (name, items, date, school) VALUES (${request.body.itemName}, ${request.body.itemQuantity}, ${today}, ${school});`
-                break;
-            default:
-                break;
+        console.log(school);
+        if(school.includes('Gib')){
+            sqlquery = `INSERT INTO gibsInventory (item_name, item_quantity, school) VALUES ('${req.body.itemName}', '${req.body.itemQuantity}', '${school}');`;
+
+        }else if(school.includes('Lakewood')){
+            sqlquery = `INSERT INTO lhsInventory (item_name, item_quantity, school) VALUES ('${req.body.itemName}', '${req.body.itemQuantity}', '${school}');`;
+
+        }else if(school.includes('Holl')){
+            sqlquery = `INSERT INTO hollinsInventory (item_name, item_quantity, school) VALUES ('${req.body.itemName}', '${req.body.itemQuantity}', '${school}');`;
         }
+
         connection.query(sqlquery, function(err, result){
             if(err) throw err;
-            Console.log('1 row inserted');
+            console.log('1 row inserted');
         })
     });
     app.post('/loadOrders', function(req,response)
@@ -381,7 +375,7 @@ exports.setRequestUrl=function(app){
             port: '3306',
             user: 'pantryAdmin',
             password: 'Pantry21!',
-            database: 'pantrydb'
+            database: 'pantrydb' 
         });
         connection.connect(function(err){
             if(err){
