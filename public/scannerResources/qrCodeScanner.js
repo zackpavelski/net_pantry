@@ -87,7 +87,7 @@ qrcode.callback = res => {
     }
     lastScanned = res;
     lastQuantity = document.getElementById('number').value;
-    setti
+    
     tick();
     scan();
   }
