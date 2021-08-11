@@ -306,7 +306,7 @@ table {
   font-weight: 400;
   font-style: normal;
   border-collapse: collapse;
-  width: 40%;
+  width: 80%;
 }
 #checkOutTable tr:nth-child(even) {
 background-color: /*#eee;*/#eff2f5
