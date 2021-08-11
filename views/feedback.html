@@ -134,11 +134,12 @@
 							if(!(data.message.includes('admin'))){
 								document.getElementById('inventoryTab').remove();
 								document.getElementById('addItemTab').remove();
-                if(data.message.includes('admin')){
-                  window.location.href='/adminFeedback';
-                }
+                
                              return;}
                          }
+                         if(data.message.includes('admin')){
+                  window.location.href='/feedbackResponse';
+                }
                      }).fail(function(){
                         //do nothing ....
                          console.log('failed...');

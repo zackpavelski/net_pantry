@@ -443,6 +443,37 @@ exports.setRequestUrl=function(app){
             response.send({success: true, message: strFinal});
         });
     });
+    app.post('/loadFeedback', function(req, response){
+        var arr = '';
+        var connection = mysql.createConnection({
+            host: 'pantrydb.cvskfciqfnj6.us-east-1.rds.amazonaws.com',
+            port: '3306',
+            user: 'pantryAdmin',
+            password: 'Pantry21!',
+            database: 'pantrydb'
+        });
+        connection.query('SELECT * FROM feedback', function(err, result){
+            if(err) throw err;
+            var arr = '';
+            console.log(result);
+            for(var i = 0; i<= result.length; i++){
+                try{
+                    var row = result[i];
+                    
+                    arr += `<tr><td>${row.date}</td><td>${row.paragraph}</td><td>${row.q1}</td><td>${row.q2}</td><td>${row.q3}</td><td>${row.q4}</td><td>${row.q5}</td><td>${row.q6}</td></tr>`
+                }catch(e){
+                    console.log('Empty User');
+                    continue;
+            
+                }
+                
+                //fullName, username, numPeople, numMinors, zipCode, school
+            }
+            console.log(arr);
+            response.send({success: true, message: arr});
+        })
+    });;
+   
     app.post('/postFeedback', function(req, reqponse){
         var connection = mysql.createConnection({
             host: 'pantrydb.cvskfciqfnj6.us-east-1.rds.amazonaws.com',

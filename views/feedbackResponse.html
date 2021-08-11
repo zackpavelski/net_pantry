@@ -16,7 +16,7 @@
 </head>
 
 <div class="page-container">
-<body class="body" onload="">
+<body class="body" onload="load()">
     <div class="page-wrapper">
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,18 +44,20 @@
         </div>
 
         <div id="actionButtons">
-            <button id="buttons">Refresh Responses</button>
-            <button id="buttons">Download Responses</button>
+            <button id="buttons"onclick="exportTableToExcel('checkOutTable', 'feedback')">Download Responses</button>
         </div>
 
         <div id="tables" style="margin-left: 100px; width: 50vw;">
             <table class="table_background" id="checkOutTable" >
                 <tr>
-                    <th>Name</th>
-                    <th>Items</th>
                     <th>Date</th>
-                    <th>ID</th>
-                    <th>School</th>
+                    <th>Paragraph</th>
+                    <th>Q1</th>
+                    <th>Q2</th>
+                    <th>Q3</th>
+                    <th>Q4</th> 
+                    <th>Q5</th>
+                    <th>Q6</th>
                 </tr>
                 
         
@@ -65,5 +67,61 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<script>
+    function load(){
+             console.log('connecting');
+             //ajax call
+              $.ajax({
+                       url: '/loadFeedback',
+                       method:'POST'
+                     }).done(function(data){
+                         if(data.success){
+                             console.log(data.message);
+                             $('#checkOutTable').append(data.message);
+                            
+                             return;
+                         }
+                     }).fail(function(){
+                        //do nothing ....
+                         console.log('failed...');
+                         return;
+                     });
+             };
+</script>
+<script>
+    var date = new Date();
+    date = date.getDate;
+
+    function exportTableToExcel(tableID, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}</script>
 </html>
