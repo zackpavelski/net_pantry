@@ -25,9 +25,18 @@ h2 {
 main {
 	padding: 10 0 100px 300px;
 	padding-bottom: 40px;
-	max-width: 1340px;
+	max-width: 50%;
+	margin:auto;
 }
 
+@media screen and (max-width:600px){
+main {
+	padding: 10 0 100px 300px;
+	padding-bottom: 40px;
+	max-width: 70%;
+	margin:auto;
+}
+}
 #photo {
 	display: none;
 }
