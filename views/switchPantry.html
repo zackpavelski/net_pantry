@@ -60,6 +60,7 @@
 .select-items div,.select-selected {
   color: #ffffff;
   padding: 8px 16px;
+  margin-top: 15px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
@@ -90,7 +91,7 @@
 
 <body class="body">
 <!--navbar--><div class="page-container">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="text-align: center;">
         <a class="navbar-brand head" action="dashboard" onclick="window.location.href='/dashboard'"><img src="/images/food4allkidslogoSmall.png" alt="logo">
 </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
@@ -119,15 +120,21 @@
   <form id="school" name="school" action="/changeSchool" method="POST">
     <fieldset>
       <select id="school">
-        <option value="0">Select School:</option>
+        <option value="0" style="margin-top: 15px;">Select School:</option>
         <option value="Lakewood">Lakewood</option>
         <option value="Gibbs">Gibbs</option>
         <option value="Hollins">Hollins</option>
       </select>
-      <input type="submit" value="Submit">
+      
+
+      
+      <label for="student">Username:</label>
+      <input type="text" id="student" style="width: 100%;">
+      
     </fieldset>
+    
   </form>
-</div>
+</div><br><input type="submit" value="Submit">
 </div>
 <script>
   function changeSchool(){
