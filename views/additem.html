@@ -88,6 +88,7 @@
                 
                         <!-- Button to generate QR Code for
                         the entered data -->
+                        <p style="margin:auto">Please note the item should already exist in order for this to work.</p>
                         <button type="button" class="btn btn-default" id="generate">Generate</button>
                         <input type="button" id="print" onclick=" printDiv('printableArea')" value="Print">
                         <br>
@@ -112,7 +113,7 @@
                             <option value="Hollins">Hollins</option>
                           </select>
                           <br>
-                        <button type="submit" id="submit" class="btn btn-default">
+                        <button type="submit" id="submit" onclick="window.location.href = '/changeDash'" class="btn btn-default">
                             Submit
                         </button>
                     </fieldset>
@@ -173,6 +174,9 @@
                 
                 
                 <script>
+                    function changeDash(){
+                        window.location.href = '/dashboard';
+                    }
                     function printDiv() {
                         var divContents = document.getElementById("printableArea").innerHTML;
                         var a = window.open('', '', 'height=500, width=500');

@@ -3,6 +3,9 @@ var crpyto = require('crypto');
 var bcrypt = require('bcrypt');
 var LocalStorage = require('node-localstorage').LocalStorage;
 const { Console } = require('console');
+const { response } = require('express');
+const { Decoder } = require('@nuintun/qrcode');
+
 localStorage = new LocalStorage('./scratch');
 
 
@@ -458,9 +461,13 @@ exports.setRequestUrl=function(app){
         //paragraph date q1-q7
         connection.query(`INSERT INTO feedback (paragraph, date, q1, q2, q3, q4, q5, q6) VALUES ('${req.body.q7}','${today}', '${req.body.q1}', '${req.body.q2}', '${req.body.q3}', '${req.body.q4}', '${req.body.q5}', '${req.body.q6}')`, function(err, result){
                 if(err) throw err;
-                else console.log('1 record inserted');
+                else {
+                    response.redirect('/dashboard');
+                    
+                }
           });
     });
+ 
     app.post('/postOrder', function(req, response){
         var connection = mysql.createConnection({
             host: 'pantrydb.cvskfciqfnj6.us-east-1.rds.amazonaws.com',

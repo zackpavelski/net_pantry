@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@nuintun/qrcode": "^3.0.1",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.5",

@@ -65,29 +65,19 @@
           <label for="item">Item:</label>
           <input type="text" id="item" name="food" placeholder="Banana, Canned Corn, etc...">
 
-          <label for="macro"> Macro:</label>
-          <select id="macro" name="macro">
-            <option value="carb">Carb (ex. Bread, Pasta, Cereal)</option>
-            <option value="protein">Protein (ex. Meat or Eggs)</option>
-            <option value="fat">Fat (ex. Oils, Dairy, Nuts)</option>
-            </select>
+          
 
           <label for="qty">Qty:</label>
           <input type="text" id="qty" name="qty" placeholder="1, 2, 3, etc...">
 
 
-          <input type="submit" avlue="Add to Cart">
+          <input type="submit" value="Add to Cart">
           </form>
         </div>
       </div>  
     </div>
       <!--end popup add item modal-->
-      <form action="/">
-        <label for="myfile">Upload image of QR code:</label>
-        <input type="file" id="myfile" name="myfile"><br>
-        <button style="scroll-margin-bottom:0vh; width: auto; margin-right: auto; margin-left: auto; display: block;">Add</button>
-        <img id='output'/>
-      </form>
+     
 
         <div id="Table" style="padding:15px;">
           <div id="listID" style="font-family: 'Noto Sans', 'Helvetica'; font-size: 20px; color:  #236dad; margin-top: -4vh; text-align: center; margin-right: auto; margin-left: auto; display: block;">
@@ -123,12 +113,15 @@
       
         
         
-        
+<script type="text/javascript" src="https://unpkg.com/@zxing/browser@latest"></script>
+
 <script src="js/jquery-3.3.1.slim.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script src="/scannerResources/qrCodeScanner.js"></script>
     <script>
+    
+     
         function submitOrders(){
     //ajax call
     console.log('in ajax call');
@@ -168,6 +161,7 @@
                          return;
                      });
              };
+               
 
       </script>
 
