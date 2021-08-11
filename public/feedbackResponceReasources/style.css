@@ -3,6 +3,11 @@
     box-sizing: border-box;    
   }    
       
+  .page-wrapper {
+    overflow: hidden;
+    background: #e5e5e5;
+    /* padding-bottom: 8vh; */
+}
   table {
     border-collapse:separate;
     border:solid whitesmoke 2px;
