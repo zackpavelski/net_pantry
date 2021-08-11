@@ -24,17 +24,18 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
                 <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
-                <a class="nav-item nav-link" id="inventoryTab" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
-                <a class="nav-item nav-link" id="addItemTab" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
+                <a class="nav-item nav-link" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
+                <a class="nav-item nav-link" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
                 <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
-				<a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
+                <a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
                 <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
+                
             </div>
         </div>
     </nav>
 	<main>
 		<h1 class="mt-4 mb-4">Account Settings</h1>
-		<div class="alert alert-primary row no-gutters" style="width: 120%;">
+		<div class="alert alert-primary row no-gutters" style="margin-left: auto; margin-right: auto;">
 			<div class="col-md-2 mr-4">
 			</div>
 			<div class="col-md ml-2 mr-4">
@@ -42,10 +43,7 @@
 		
 		</div>
 		<div class="row no-gutters mt-4">
-			<div class="col-md-2 mr-4">
-				
 			
-			</div>
 			<div class="col-md ml-2 mr-4 mt-1">
 				<form action="/updateUser" method="post" name="info_form">
 					<input type="text" class="form-control mb-3" id="validationServer01" placeholder="First name" id="firstName" name="firstName" required>

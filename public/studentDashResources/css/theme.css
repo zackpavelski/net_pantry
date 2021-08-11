@@ -3204,6 +3204,7 @@ section {
 .overview-box .text {
     font-weight: 300;
     display: inline-block;
+    padding-top:8px;
 }
 
 .overview-box .text h2 {
