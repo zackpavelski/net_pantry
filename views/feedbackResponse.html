@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-    <title>Feeding the Future | Inventory</title>
+    <title>Food 4 All Kids | Inventory</title>
     <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -39,6 +39,7 @@
         </div>
     </nav>
     <!-- navbar ends -->
+    <div class="container">
         <div id="header">
             <h2>Feedback Responses</h2>
         </div>
@@ -47,7 +48,7 @@
             <button id="buttons"onclick="exportTableToExcel('checkOutTable', 'feedback')">Download Responses</button>
         </div>
 
-        <div id="tables" style="margin-left: 100px; width: 50vw;">
+        <div id="tables" style=" width: 50vw;">
             <table class="table_background" id="checkOutTable" >
                 <tr>
                     <th>Date</th>
@@ -63,9 +64,17 @@
         
                 
             </table>
+            </div>
         </div>
         </div>
     </div>
+    <div class="row" style="margin-left:auto; margin-right:auto;">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Food 4 All Kids - a website created by students, for the students. Project supported by <a href="https://www.hopkinsallchildrens.org/">John Hopkins All Children's Hospital.</a></p>
+                                </div>
+                            </div>
+                        </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -124,4 +133,11 @@
         downloadLink.click();
     }
 }</script>
+<!--fixed waffle-->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> 
+        <script src="js/inventory.js"></script>
 </html>
