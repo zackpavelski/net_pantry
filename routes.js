@@ -4,7 +4,9 @@ var bcrypt = require('bcrypt');
 var LocalStorage = require('node-localstorage').LocalStorage;
 const { Console } = require('console');
 const { response } = require('express');
+var nodemailer = require("nodemailer");
 const { Decoder } = require('@nuintun/qrcode');
+const internal = require('stream');
 
 localStorage = new LocalStorage('./scratch');
 
@@ -572,6 +574,86 @@ exports.setRequestUrl=function(app){
             response.send({success: true, message: 'Success'});
 
         });
+
+        // now check for inventory
+        var mysql1 = "SELECT * FROM lhsInventory";
+        var mysql2 = "SELECT * FROM gibsInventory";
+        var mysql3 = "SELECT * FROM hollinsInventory";
+        var arr = 'The following items are running low on quantity at Lakewood: ';
+        var lowCounter = 0;
+        connection.query(mysql1, function(error, results){
+            if(err) throw err;
+            for(var i = 0; i<= results.length; i++){
+                var row = results[i];
+                if(row.item_quantity <= 10){
+                    lowCounter++;
+                    if(i< results.length) arr+= row.item_name + ', ';
+                    else arr += row.item_name;
+                }
+            }
+        });
+        var arr = ' \n The following items are running low on quantity at Gibbs: ';
+        connection.query(mysql2, function(error, results){
+            if(err) throw err;
+            for(var i = 0; i<= results.length; i++){
+                var row = results[i];
+                if(row.item_quantity <= 10){
+                    lowCounter++;
+                    if(i< results.length) arr+= row.item_name + ', ';
+                    else arr += row.item_name;
+                }
+            }
+        });
+        var arr = '\n The following items are running low on quantity at Hollins: ';
+        connection.query(mysql3, function(error, results){
+            if(err) throw err;
+            for(var i = 0; i<= results.length; i++){
+                var row = results[i];
+                if(row.item_quantity <= 10){
+                    lowCounter++;
+                    if(i< results.length) arr+= row.item_name + ', ';
+                    else arr += row.item_name;
+                }
+            }
+        });
+
+        if(lowCounter>=1){
+            // SEND EMAIL
+            if(Number(yyyy) == 2021){
+                if(Number(mm) >= 9){
+                    let transporter = nodemailer.createTransport({
+                        service: 'gmail',
+                        auth: {
+                          user: 'food4allkidspantry@gmail.com', // generated ethereal user
+                          pass: 'Pantry21!', // generated ethereal password
+                        },
+                      });
+                      let info = transporter.sendMail({
+                        from: 'food4allkidspantry@gmail.com', // sender address
+                        to: "kdiazserrano@jhmi.edu", // list of receivers
+                        subject: "Pantry Alerts", // Subject line
+                        text: arr , // plain text body
+                      });
+                }
+            }
+            if(Number(yyyy) > 2021){
+                let transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                      user: 'food4allkidspantry@gmail.com', // generated ethereal user
+                      pass: 'Pantry21!', // generated ethereal password
+                    },
+                  });
+                  let info = transporter.sendMail({
+                    from: 'food4allkidspantry@gmail.com', // sender address
+                    to: "kdiazserrano@jhmi.edu", // list of receivers
+                    subject: "Pantry Alerts", // Subject line
+                    text: arr , // plain text body
+                  });
+            }
+            
+            
+        }
 
     });
 
