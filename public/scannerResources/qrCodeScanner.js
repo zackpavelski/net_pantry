@@ -37,11 +37,9 @@ let scanning = false;
 var lastQuantity = "";
 var lastScanned = "";
 var items = [];
-video.setAttribute('autoplay', '');
-video.setAttribute('muted', '');
-video.setAttribute('playsinline', '');
 
-navigator.mediaDevices
+try{
+  navigator.mediaDevices
 
   .getUserMedia({video: {width: 720, heigh: 720}})
   .then(function(stream) {
@@ -57,6 +55,10 @@ navigator.mediaDevices
     tick();
     scan();
   });
+
+}catch(e){
+  document.getElementById('qr_div'.remove());
+}
 
 qrcode.callback = res => {
   
