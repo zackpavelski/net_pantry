@@ -61,7 +61,7 @@
                     
                     <div id="printableArea">
                         <img id="qr-code" style="display: block; margin-left: auto; margin-right: auto;" src="https://api.qrserver.com/v1/create-qr-code/?data=Null&amp;size=160x160" alt="" title="" />
-                        <p style="position:relative;left: 48%" id="itemID"></p>
+                        <p style="position:relative;left: 43%" id="itemID"></p>
                     </div>
                 
                     <div class="form-horizontal" style="margin-left: 0vw;">
@@ -220,7 +220,7 @@
                }
                      }).done(function(data){
                          if(data.success){
-                            document.getElementById('itemID').innerHTML = data.message;
+                            document.getElementById('itemID').innerHTML = 'Product ID: '+ data.message;
                          }
                      }).fail(function(){
                         //do nothing ....

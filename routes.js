@@ -310,7 +310,7 @@ exports.setRequestUrl=function(app){
             user: 'pantryAdmin',
             password: 'Pantry21!',
             database: 'pantrydb'
-        });
+        }); 
         
         var password;
             var saltRounds = 4;
@@ -413,7 +413,7 @@ exports.setRequestUrl=function(app){
         connection.query(`SELECT * FROM ${req.body.schoolName} WHERE item_name = '${req.body.itemName}' LIMIT 1`, function(err, result){
             console.log(result[0]);
             if(err) throw err;
-            response.send({success: true, message: String(result[0].id) + ' : ' + result[0].item_name});
+            response.send({success: true, message: String(result[0].id) + ', Item: ' + result[0].item_name});
         });
     });
     app.post('/loadzip', function(req, response){
