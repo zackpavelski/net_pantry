@@ -58,6 +58,8 @@ try{
 
 }catch(e){
   document.getElementById('qr_div').remove();
+  document.getElementById('header').remove();
+
 }
 
 qrcode.callback = res => {
