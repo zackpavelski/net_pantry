@@ -31,8 +31,8 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" action="dashboard" onclick="window.location.href='/dashboard'">My Dashboard</a>
                 <a class="nav-item nav-link" action="scanner" onclick="window.location.href='/scanner'">Scanner</a>
-                <a class="nav-item nav-link" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
-                <a class="nav-item nav-link" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
+                <a class="nav-item nav-link" id="inventoryTab" action="inventory" onclick="window.location.href='/inventory'">Inventory</a>
+                <a class="nav-item nav-link" id="addItemTab" action="additem" onclick="window.location.href='/addItem'">Add Item</a>
                 <a class="nav-item nav-link" action="account" onclick="window.location.href='/account'">Account</a>
                 <a class="nav-item nav-link" action="feedback" onclick="window.location.href='/feedback'">Feedback</a>
                 <a class="nav-item nav-link" action="login" onclick="window.location.href='/'">Log Out</a><!--just temporary... :D-->
@@ -55,29 +55,18 @@
         <text>Items</text>
         <br>
 
-        <!--begins popup add item modal-->
-        <a href="#openModal">Scanner not working? Click here to manually add items.</a>
-        <div id="openModal" class="modalDialog">
-        <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2 style="padding-top:10px;"> Add item</h2>
-        <div class="form">
-          <form action="/action_page.php">
-          <label for="item">Item:</label>
-          <input type="text" id="item" name="food" placeholder="Banana, Canned Corn, etc...">
-
+       
           
 
+
+        <div style="margin-top: 3%; max-width: 20%; margin-left:auto; margin-right: auto; display: block">
+          <label for="item">Item:</label>
+          <input type="text" id="item" name="food" placeholder="Item">        
           <label for="qty">Qty:</label>
-          <input type="text" id="qty" name="qty" placeholder="1, 2, 3, etc...">
-
-
-          <input type="submit" value="Add to Cart">
-          </form>
-        </div>
-      </div>  
-    </div>
-      <!--end popup add item modal-->
+          <input type="text" id="qty" name="qty" placeholder="1">
+          <button id="orderFin" onclick="addManual()" style="margin-left: 34%; scroll-margin-bottom:0vh; width: auto; margin-right: auto; margin-left: auto; display: block;" value="Add to Cart">Add to Cart</button>
+          </div>
+      
      
 
         <div id="Table" style="padding:15px;">
@@ -122,7 +111,18 @@
     <script src="/scannerResources/qrCodeScanner.js"></script>
     <script>
     
-     
+     function addManual(){
+      var res = document.getElementById('item').value;
+      const inner = document.getElementById('itemTable').insertRow();
+      
+      const cell1 = inner.insertCell(0);
+      const cell2 = inner.insertCell(1);
+      cell1.innerHTML = res;
+      cell2.innerHTML = document.getElementById('qty').value;
+
+      var repeat = (res + ', ').repeat(document.getElementById('qty').value);
+      document.getElementsByTagName("p")[0].innerHTML += repeat;
+     }
         function submitOrders(){
     //ajax call
     console.log('in ajax call');
