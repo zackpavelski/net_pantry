@@ -297,7 +297,27 @@ exports.setRequestUrl=function(app){
             password: 'Pantry21!',
             database: 'pantrydb'
         });
-        var sql = `UPDATE pantryUsers SET school = '${req.body.school}' WHERE username = '${localStorage.getItem('name')}' `
+        var sql = `UPDATE pantryUsers SET school = '${req.body.school}' WHERE username = '${req.body.student}' `;  
+        connection.query(sql, function(err, result){
+            if(err) throw err;
+            console.log("Updated.");
+        })
+    })
+    app.post('/resetPassword', function(req, response){
+        var connection = mysql.createConnection({
+            host: 'pantrydb.cvskfciqfnj6.us-east-1.rds.amazonaws.com',
+            port: '3306',
+            user: 'pantryAdmin',
+            password: 'Pantry21!',
+            database: 'pantrydb'
+        });
+        
+        var password;
+            var saltRounds = 4;
+            bcrypt.hash(req.body.pwd, saltRounds, function(err, hash) {
+                password = hash;
+              });
+        var sql = `UPDATE pantryUsers SET password = '${password}' WHERE username = '${req.body.username}' AND numPeople = '${req.body.people}' `;  
         connection.query(sql, function(err, result){
             if(err) throw err;
             console.log("Updated.");
