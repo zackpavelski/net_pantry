@@ -57,7 +57,7 @@ try{
   });
 
 }catch(e){
-  document.getElementById('qr_div'.remove());
+  document.getElementById('qr_div').remove();
 }
 
 qrcode.callback = res => {
