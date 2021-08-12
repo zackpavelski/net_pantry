@@ -1,11 +1,13 @@
- 
+ body{
+   background-color:#efefef;
+ }
 * {    
     box-sizing: border-box;    
   }    
       
   .page-wrapper {
     overflow: hidden;
-    background: #e5e5e5;
+    background: #efefef;
     /* padding-bottom: 8vh; */
 }
   table {

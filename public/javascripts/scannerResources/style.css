@@ -6,7 +6,7 @@ yellow: #F9C506;*/
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #e5e5e5;
+  background-color: #efefef;
   text-align:center!important;
   
 }
@@ -27,12 +27,12 @@ h1 {
 }
 header
 {
-  background-color: #e5e5e5;
+  background-color: #efefef;
   margin-top: 50px;
 }
 
 .page-container {
-    background: #e5e5e5;
+    background: #efefef;
 }
 
 #container {
@@ -164,7 +164,7 @@ button {
   #vid_container {
     width: 105%;
     height: 100%;
-    background-color: #e5e5e5;
+    background-color: #efefef;
   }
 
   #vid_container.left {

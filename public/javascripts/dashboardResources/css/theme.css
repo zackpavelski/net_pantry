@@ -276,19 +276,19 @@ section {
 /*Page Objects*/
 .page-wrapper {
     overflow: hidden;
-    background: #e5e5e5;
+    background: #efefef;
     padding-bottom: 8vh;
 }
 
 @media (max-width: 991px) {
     .page-wrapper {
     overflow: auto;
-    background: #e5e5e5;
+    background: #efefef;
     padding-bottom: 12vh;
 }
 }
 .page-container {
-    background: #e5e5e5;
+    background: #efefef;
     padding-left: 0px;
 }
 
@@ -331,7 +331,7 @@ section {
 }
 
 .page-content--bge5 {
-    background: #e5e5e5;
+    background: #efefef;
     height: 100vh;
 }
 
@@ -712,7 +712,7 @@ section {
 /* ----- Input ----- */
 .au-input {
     line-height: 43px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     font-size: 14px;
     color: #666;
     padding: 0 17px;
@@ -728,7 +728,7 @@ section {
 .au-input--style2 {
     color: #808080;
     line-height: 43px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     font-size: 14px;
     padding: 0 17px;
     -webkit-border-radius: 3px;
@@ -831,7 +831,7 @@ section {
     right: 0;
     min-width: 65px;
     line-height: 43px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -1049,7 +1049,7 @@ section {
 
 .rs-select2--border .select2-container--default .select2-selection--single {
     background: transparent;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
 }
 
 .rs-select2--border .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -1103,7 +1103,7 @@ section {
     height: 22px;
     width: 22px;
     background-color: #fff;
-    border: 2px solid #e5e5e5;
+    border: 2px solid #efefef;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -1602,7 +1602,7 @@ section {
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-    border-right: 1px solid #e5e5e5;
+    border-right: 1px solid #efefef;
     position: relative;
     z-index: 3;
 }
@@ -1867,7 +1867,7 @@ section {
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
     -ms-transform: scale(0);
@@ -2207,7 +2207,7 @@ section {
     height: -webkit-calc(100vh - 75px);
     height: -moz-calc(100vh - 75px);
     height: calc(100vh - 75px);
-    border-right: 1px solid #e5e5e5;
+    border-right: 1px solid #efefef;
     position: relative;
 }
 
@@ -2998,7 +2998,7 @@ section {
 }
 
 .header4-wrap .header__tool .setting-dropdown {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     top: 51px;
 }
 
@@ -3074,7 +3074,7 @@ section {
 
 .navbar-sidebar3 .has-sub.open > a {
     background: #fff;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
 }
 
 @media (max-width: 1199px) {
@@ -3292,7 +3292,7 @@ section {
 }
 
 .au-card-bordered {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     background: #fff;
     padding: 40px;
     padding-top: 42px;
@@ -3371,17 +3371,17 @@ section {
 }
 
 .au-task--border .au-task__title {
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
 }
 
 .au-task--border .au-task-list {
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
 }
 
 .au-task--border .au-task__footer {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     border-top: none;
 }
 
@@ -3654,17 +3654,17 @@ section {
 }
 
 .au-chat--border .au-chat__title {
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
 }
 
 .au-chat--border .au-chat__content {
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
 }
 
 .au-chat--border .au-chat-textfield {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     border-top: none;
 }
 
@@ -3860,7 +3860,7 @@ section {
 }
 
 .task-progress {
-    border: 1px solid  #e5e5e5;
+    border: 1px solid  #efefef;
     background: #fff;
     padding: 40px;
     padding-top: 42px;
@@ -3878,7 +3878,7 @@ section {
 }
 
 .recent-report2 {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     background: #fff;
     padding: 40px;
     padding-top: 42px;
@@ -3947,7 +3947,7 @@ section {
 }
 
 .user-data {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     background: #fff;
     padding-top: 44px;
 }
@@ -3968,7 +3968,7 @@ section {
 }
 
 .map-data {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     background: #fff;
     padding: 40px;
     padding-top: 44px;
@@ -3977,7 +3977,7 @@ section {
 
 .recent-report3, .chart-percent-3 {
     background: #fff;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -4402,7 +4402,7 @@ section {
     cursor: pointer;
     width: 30px;
     height: 30px;
-    background: #e5e5e5;
+    background: #efefef;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -4457,7 +4457,7 @@ section {
 
 .table-top-campaign.table td {
     border-top: none;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #efefef;
     font-size: 14px;
     padding: 12px 6px;
 }
@@ -4627,7 +4627,7 @@ section {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    background: #e5e5e5;
+    background: #efefef;
     margin-right: 5px;
 }
 
@@ -4704,8 +4704,8 @@ section {
 }
 
 .table-data3 tbody tr {
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
 }
 
 .table-data3 tbody tr:last-child td:first-child {
@@ -4888,7 +4888,7 @@ section {
 .line-seprate {
     height: 1px;
     width: 100%;
-    background: #e5e5e5;
+    background: #efefef;
     border: none;
     margin-top: 20px;
     margin-bottom: 0;
@@ -4964,7 +4964,7 @@ section {
 }
 
 .statistic__item {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #efefef;
     background: #fff;
     padding: 20px 30px;
     position: relative;
