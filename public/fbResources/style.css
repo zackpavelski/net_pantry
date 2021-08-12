@@ -2,7 +2,17 @@
 * {    
     box-sizing: border-box;    
   }    
-      
+.row{
+  text-align:center;
+  padding-top:5%;
+}
+.copyright p {
+    font-size: 14px;
+    color: #666;
+    line-height: -webkit-calc(24/14);
+    line-height: -moz-calc(24/14);
+    line-height: calc(24/14);
+}
   input[type=text], select, textarea {    
     width: 100%;    
     padding: 12px;    

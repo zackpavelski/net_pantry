@@ -4,6 +4,18 @@ font-family: "Roboto", sans-serif;
 -webkit-font-smoothing: antialiased;
 /*-moz-osx-font-smoothing: grayscale;   */
 }
+
+.row{
+  text-align:center;
+  padding-top:5%;
+}
+.copyright p {
+    font-size: 14px;
+    color: #666;
+    line-height: -webkit-calc(24/14);
+    line-height: -moz-calc(24/14);
+    line-height: calc(24/14);
+}
 #form {
 margin-top: 10px;
 }

@@ -4,7 +4,29 @@
 * {    
     box-sizing: border-box;    
   }    
-      
+      .row{
+  text-align:center;
+  padding-top:30%;
+}
+
+@media screen and (max-width:600px){
+  .row{
+  text-align:center;
+  padding-top:60%;
+}
+}
+
+.container {
+  padding-top:15px;
+    padding-left:3%;
+}
+.copyright p {
+    font-size: 14px;
+    color: #666;
+    line-height: -webkit-calc(24/14);
+    line-height: -moz-calc(24/14);
+    line-height: calc(24/14);
+}
   .page-wrapper {
     overflow: hidden;
     background: #efefef;
@@ -51,12 +73,10 @@
   #header
   {
     color: #526e86;
-    margin-left: 100px;
     padding-bottom: 15px;
   }
   #actionButtons
   {
-    margin-left: 100px;
 
   }
 
